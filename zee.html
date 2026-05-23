@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#5d6e58">
+<title>"Where is Zee?" — A Children's Book by Sarah Bipath</title>
+<meta name="description" content="Where is Zee? — a heartfelt children's book by speech-language pathologist and first-time mama Sarah Bipath, written in honor of her son's first birthday.">
+<!-- Open Graph (Facebook, LinkedIn, iMessage, Slack) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sarahstask.com/zee.html">
+<meta property="og:title" content="Where is Zee? — A Children's Book by Sarah Bipath">
+<meta property="og:description" content="A heartfelt children's book by speech-language pathologist and first-time mama Sarah Bipath, written in honor of her son's first birthday.">
+<meta property="og:image" content="https://www.sarahstask.com/images/sarah-with-zee.jpg">
+<meta property="og:site_name" content="Sarah's T.A.S.K.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where is Zee? — A Children's Book by Sarah Bipath">
+<meta name="twitter:description" content="A heartfelt children's book by speech-language pathologist and first-time mama Sarah Bipath, written in honor of her son's first birthday.">
+<meta name="twitter:image" content="https://www.sarahstask.com/images/sarah-with-zee.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f2ec;
+    --cream-soft: #fbf8f4;
+    --warm-white: #fdfbf8;
+    --taupe: #8a7868;
+    --taupe-dark: #5c4f44;
+    --sage: #7a8b75;
+    --sage-dark: #5d6e58;
+    --terracotta: #c8917a;
+    --terracotta-dark: #a87356;
+    --ink: #2e2823;
+    --muted: #6b5e54;
+    --line: #e4dcd1;
+    --shadow: 0 8px 32px rgba(92, 79, 68, 0.08);
+    --shadow-lg: 0 20px 60px rgba(92, 79, 68, 0.12);
+    --shadow-book: 0 30px 80px rgba(92, 79, 68, 0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--taupe-dark);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--taupe-dark); letter-spacing: 0.02em; }
+  .logo span { color: var(--sage-dark); font-style: italic; }
+  .nav-links { display: flex; gap: 2.25rem; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); letter-spacing: 0.03em; position: relative; }
+  .nav-links a:hover, .nav-links a.active { color: var(--sage-dark); }
+  .nav-links a:not(.btn-nav)::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--sage-dark); transition: width 0.3s ease;
+  }
+  .nav-links a:not(.btn-nav):hover::after, .nav-links a.active::after { width: 100%; }
+  .btn-nav { background: var(--sage-dark); color: var(--warm-white) !important; padding: 0.65rem 1.4rem; border-radius: 999px; font-size: 0.85rem; }
+  .btn-nav:hover { background: var(--taupe-dark); transform: translateY(-1px); }
+  .btn-nav::after { display: none !important; }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    position: relative;
+  }
+  .menu-toggle span {
+    position: absolute;
+    left: 4px;
+    width: 24px;
+    height: 1.5px;
+    background: var(--taupe-dark);
+    transition: transform 0.3s ease, opacity 0.2s ease, top 0.3s ease;
+    border-radius: 1px;
+  }
+  .menu-toggle span:nth-child(1) { top: 10px; }
+  .menu-toggle span:nth-child(2) { top: 16px; }
+  .menu-toggle span:nth-child(3) { top: 22px; }
+  .menu-toggle.is-active span:nth-child(1) { top: 16px; transform: rotate(45deg); }
+  .menu-toggle.is-active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .menu-toggle.is-active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
+
+  /* ===== HERO ===== */
+  .zee-hero {
+    min-height: 100vh;
+    padding: 9rem 2.5rem 5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+      radial-gradient(ellipse at top right, rgba(200, 145, 122, 0.12), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(122, 139, 117, 0.08), transparent 60%),
+      var(--cream-soft);
+    overflow: hidden;
+  }
+
+  .zee-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(138, 120, 104, 0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* Decorative floating stars */
+  .zee-hero::after {
+    content: '✦';
+    position: absolute;
+    top: 18%; left: 12%;
+    font-size: 1.5rem;
+    color: var(--terracotta);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .zee-star {
+    position: absolute;
+    color: var(--sage);
+    opacity: 0.3;
+    font-size: 1.2rem;
+    pointer-events: none;
+  }
+  .zee-star.s1 { top: 28%; right: 14%; animation: float 7s ease-in-out infinite 1s; }
+  .zee-star.s2 { bottom: 22%; left: 18%; animation: float 8s ease-in-out infinite 2s; }
+  .zee-star.s3 { bottom: 30%; right: 22%; font-size: 0.9rem; animation: float 6s ease-in-out infinite 3s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .zee-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .zee-hero-content {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .zee-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .zee-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--terracotta-dark);
+  }
+
+  .zee-eyebrow .heart { font-size: 0.9rem; }
+
+  .zee-hero h1 {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.05;
+  }
+
+  .zee-hero h1 em {
+    font-style: italic;
+    color: var(--terracotta-dark);
+    font-weight: 400;
+  }
+
+  .zee-hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--taupe);
+    margin-bottom: 1.75rem;
+    line-height: 1.4;
+  }
+
+  .zee-hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .zee-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary-zee {
+    background: var(--terracotta-dark);
+    color: var(--warm-white);
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(168, 115, 86, 0.3);
+  }
+
+  .btn-primary-zee:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(168, 115, 86, 0.4);
+  }
+
+  .btn-secondary {
+    color: var(--taupe-dark);
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--taupe);
+    border-radius: 0;
+  }
+
+  .btn-secondary:hover {
+    color: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
+  }
+
+  /* ===== BOOK COVER DISPLAY ===== */
+  .zee-book-display {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.4s forwards;
+  }
+
+  .zee-author-photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .zee-author-photo::before {
+    content: '';
+    position: absolute;
+    inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage) 100%);
+    border-radius: 4px;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .zee-author-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+    background: var(--cream-soft);
+  }
+
+  /* ===== QUOTE SECTION ===== */
+  .zee-quote {
+    padding: 6rem 2.5rem;
+    background: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zee-quote::before, .zee-quote::after {
+    content: '"';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18rem;
+    color: var(--terracotta);
+    opacity: 0.1;
+    line-height: 1;
+  }
+
+  .zee-quote::before { top: -2rem; left: 2rem; }
+  .zee-quote::after { bottom: -8rem; right: 2rem; }
+
+  .zee-quote-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .zee-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.4;
+    color: var(--taupe-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .zee-quote-attribution {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta-dark);
+    font-weight: 600;
+  }
+
+  /* ===== STORY / INSPIRATION ===== */
+  .zee-story {
+    padding: 7rem 2.5rem;
+    background: var(--warm-white);
+  }
+
+  .zee-story-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .zee-story-image {
+    position: relative;
+    aspect-ratio: 1/1;
+  }
+
+  .zee-story-image::before {
+    content: '';
+    position: absolute;
+    inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage) 100%);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  .zee-story-image-circle {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-soft) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .zee-story-image-circle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(168, 115, 86, 0.1) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .zee-story-image-icon {
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    height: 40%;
+    color: var(--terracotta-dark);
+    opacity: 0.7;
+  }
+
+  .zee-story-content .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terracotta-dark); margin-bottom: 1rem;
+  }
+
+  .zee-story-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .zee-story-content h2 em {
+    font-style: italic;
+    color: var(--terracotta-dark);
+  }
+
+  .zee-story-content p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .zee-story-roles {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0 1.5rem;
+  }
+
+  .role-tag {
+    background: var(--cream);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: var(--taupe-dark);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--line);
+  }
+
+  .role-tag.highlight {
+    background: var(--terracotta-dark);
+    color: var(--cream);
+    border-color: var(--terracotta-dark);
+  }
+
+  /* ===== WHY IT MATTERS ===== */
+  .zee-why {
+    padding: 7rem 2.5rem;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zee-why::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200, 145, 122, 0.15), transparent);
+    border-radius: 50%;
+  }
+
+  .zee-why-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .zee-why-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem;
+  }
+
+  .zee-why-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .zee-why-header h2 em {
+    font-style: italic;
+    color: var(--terracotta-dark);
+  }
+
+  .zee-why-header p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .zee-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .zee-why-card {
+    background: var(--warm-white);
+    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    text-align: center;
+    border-top: 3px solid var(--terracotta-dark);
+    transition: all 0.3s ease;
+  }
+
+  .zee-why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .zee-why-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--terracotta-dark);
+    margin: 0 auto 1.25rem;
+  }
+
+  .zee-why-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .zee-why-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ===== PURCHASE CTA ===== */
+  .zee-purchase {
+    background: linear-gradient(135deg, var(--terracotta-dark) 0%, var(--taupe-dark) 100%);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zee-purchase::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .zee-purchase-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .zee-purchase .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); margin-bottom: 1rem;
+  }
+
+  .zee-purchase h2 {
+    color: var(--warm-white);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .zee-purchase h2 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .zee-purchase p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .btn-purchase {
+    background: var(--warm-white);
+    color: var(--terracotta-dark);
+    padding: 1.15rem 2.25rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+
+  .btn-purchase:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .zee-purchase-note {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 5rem 2.5rem 2rem; }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem;
+  }
+  .footer-brand .logo { color: var(--cream); font-size: 1.75rem; margin-bottom: 1rem; display: block; }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+  .footer-col h4 {
+    color: var(--cream); font-size: 0.85rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 1.25rem; font-family: 'Lato', sans-serif; font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { padding: 0.4rem 0; font-size: 0.9rem; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* ===== STICKY MOBILE CTA ===== */
+  .sticky-cta { display: none; position: fixed; bottom: 1rem; left: 1rem; right: 1rem; z-index: 99; }
+  .sticky-cta a {
+    display: block; background: var(--terracotta-dark); color: var(--warm-white);
+    text-align: center; padding: 1rem; border-radius: 999px;
+    font-weight: 500; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 968px) {
+    .zee-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .zee-author-photo { max-width: 360px; }
+    .zee-story-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .zee-story-image { max-width: 360px; margin: 0 auto; }
+    .zee-why-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .nav { padding: 1rem 1.25rem; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--warm-white); flex-direction: column;
+      padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .zee-hero { padding: 7rem 1.25rem 4rem; }
+    .zee-quote { padding: 4rem 1.25rem; }
+    .zee-story, .zee-why { padding: 5rem 1.25rem; }
+    .zee-purchase { padding: 5rem 1.25rem; }
+    .zee-ctas { flex-direction: column; align-items: stretch; }
+    .btn-primary-zee, .btn-secondary { justify-content: center; text-align: center; }
+    .footer { padding: 4rem 1.25rem 2rem; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .sticky-cta { display: block; }
+  }
+
+  /* ============================================
+     RESPONSIVE ENHANCEMENTS — applies to all pages
+     Layered over base styles via cascade
+     ============================================ */
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* iOS Safari: prefer dvh over vh where supported */
+  @supports (height: 100dvh) {
+    .hero, .zee-hero {
+      min-height: 100dvh;
+    }
+  }
+
+  /* Prevent any element from causing horizontal overflow */
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure all interactive elements meet 44px minimum touch target on mobile */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav,
+    .btn-card,
+    .btn-purchase,
+    .btn-primary-zee,
+    .btn-submit,
+    .nav-links a,
+    .jump-link,
+    .faq-question,
+    .menu-toggle {
+      min-height: 44px;
+    }
+    .nav-links a:not(.btn-nav) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  /* ============================================
+     LARGE DESKTOP — 1440px+
+     Cap content width, scale up typography slightly
+     ============================================ */
+  @media (min-width: 1440px) {
+    .nav-inner,
+    .hero-inner,
+    .zee-hero-inner,
+    .page-header-inner,
+    .section-inner,
+    .quick-contact-inner,
+    .form-inner,
+    .location-inner,
+    .credentials-inner,
+    .experience-inner,
+    .mission-inner,
+    .intro-inner,
+    .category-inner,
+    .process-inner,
+    .zee-story-inner,
+    .zee-why-inner,
+    .footer-inner,
+    .trust-inner,
+    .final-cta-inner,
+    .zee-purchase-inner,
+    .pullquote-inner,
+    .zee-quote-inner {
+      max-width: 1400px;
+    }
+  }
+
+  /* ============================================
+     TABLET LANDSCAPE / SMALL LAPTOP — 1024px
+     Many things stay 2-col but with tighter gaps
+     ============================================ */
+  @media (max-width: 1024px) {
+    .nav { padding: 1rem 1.75rem; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.85rem; }
+
+    .hero, .zee-hero {
+      padding: 8rem 1.75rem 4rem;
+    }
+    .hero-inner, .zee-hero-inner {
+      gap: 3rem;
+    }
+
+    .page-header { padding: 8rem 1.75rem 4rem; }
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase, .pullquote,
+    .zee-quote, .services, .sarah, .faq, .trust {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .footer { padding: 4rem 1.75rem 2rem; }
+
+    /* Cred grid stays 2 columns instead of 3 */
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Settings grid: 3 across */
+    .settings-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ============================================
+     TABLET PORTRAIT — 900px
+     Single-column layouts begin
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-inner, .zee-hero-inner,
+    .sarah-inner, .intro-inner, .zee-story-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-visual, .sarah-image, .intro-image, .zee-story-image, .zee-author-photo {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .services-grid,
+    .specialty-grid,
+    .zee-why-grid,
+    .location-grid,
+    .quick-contact-inner,
+    .mission-inner,
+    .form-inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .form-inner { gap: 3rem; }
+
+    .service-card.featured {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .settings-grid { grid-template-columns: repeat(2, 1fr); }
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .category-header { grid-template-columns: 1fr; gap: 1rem; }
+    .category-marker { font-size: 4rem; }
+
+    /* Tone down decorative absolute elements that can overflow */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 12rem;
+    }
+  }
+
+  /* ============================================
+     LARGE PHONE / SMALL TABLET — 768px
+     Show mobile nav, scale typography down further
+     ============================================ */
+  @media (max-width: 768px) {
+    .nav { padding: 0.9rem 1.25rem; }
+    .nav-inner { position: relative; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: -1.25rem;
+      right: -1.25rem;
+      background: var(--warm-white);
+      flex-direction: column;
+      padding: 1.5rem 1.25rem;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(92, 79, 68, 0.1);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 0.5rem;
+    }
+    .nav-links a.btn-nav {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .hero, .zee-hero { padding: 7rem 1.25rem 4rem; }
+
+    .hero h1, .zee-hero h1, .page-header h1 {
+      font-size: clamp(2rem, 8vw, 2.75rem);
+    }
+
+    .hero-sub, .zee-hero-sub {
+      font-size: 1rem;
+    }
+
+    .hero-badge {
+      left: 1rem; bottom: 1rem;
+      max-width: 200px;
+      padding: 1rem 1.25rem;
+    }
+
+    .hero-ctas, .zee-ctas {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-secondary, .btn-primary-zee {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .page-header { padding: 7rem 1.25rem 3.5rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .pullquote, .zee-quote { padding: 4rem 1.25rem; }
+    .trust { padding: 1.5rem 1.25rem; }
+
+    .trust-inner {
+      gap: 0.75rem 1.25rem;
+      font-size: 0.7rem;
+    }
+
+    .settings-grid, .cred-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-row .form-group:not(:last-child) { margin-bottom: 1.25rem; }
+
+    .contact-form { padding: 2rem 1.5rem; }
+
+    .jump-nav { padding: 1rem 1.25rem; top: 60px; }
+    .jump-nav-inner { gap: 1.25rem; }
+    .jump-link { font-size: 0.7rem; }
+
+    .faq-question { font-size: 1.1rem; padding: 1.25rem 0; }
+    .faq-item.open .faq-answer { max-height: 800px; padding-bottom: 1.25rem; }
+
+    .pullquote p, .zee-quote p {
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 8rem;
+    }
+
+    .sticky-cta { display: block; }
+
+    /* Footer: ensure nothing overflows */
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ============================================
+     SMALL PHONE — 480px (iPhone SE, smaller Androids)
+     ============================================ */
+  @media (max-width: 480px) {
+    .nav { padding: 0.85rem 1rem; }
+    .logo { font-size: 1.3rem; }
+
+    .hero, .zee-hero { padding: 6rem 1rem 3rem; }
+
+    .hero h1, .zee-hero h1 {
+      font-size: clamp(1.85rem, 9vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .hero-eyebrow, .zee-eyebrow, .page-eyebrow, .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-sub, .zee-hero-sub { font-size: 0.95rem; }
+
+    .page-header { padding: 6rem 1rem 3rem; }
+    .page-header h1 { font-size: clamp(1.85rem, 9vw, 2.4rem); }
+    .page-header > .page-header-inner > p { font-size: 1rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .pullquote, .zee-quote { padding: 3.5rem 1rem; }
+    .trust { padding: 1.25rem 1rem; }
+
+    .footer { padding: 3.5rem 1rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+    .service-card, .service-item, .specialty-card, .contact-card,
+    .location-card, .mission-card, .zee-why-card, .step,
+    .credentials .cred-item, .setting-card {
+      padding: 1.75rem 1.5rem;
+    }
+
+    .service-card.featured { padding: 2rem 1.5rem; }
+    .contact-form { padding: 1.75rem 1.25rem; }
+
+    .hero-badge {
+      left: 0.75rem; bottom: 0.75rem;
+      max-width: 180px;
+      padding: 0.85rem 1rem;
+    }
+    .hero-badge-text { font-size: 0.95rem; }
+
+    .btn-primary, .btn-primary-zee, .btn-purchase, .btn-submit, .btn-card {
+      font-size: 0.9rem;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .jump-nav-inner { gap: 1rem; }
+    .jump-link { font-size: 0.65rem; letter-spacing: 0.1em; }
+
+    .sticky-cta { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; }
+    .sticky-cta a { font-size: 0.9rem; padding: 0.85rem; }
+
+    /* Smaller decorative elements on tiny screens */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 6rem;
+    }
+
+    .category-marker { font-size: 3.5rem; }
+
+    .service-card h3, .service-item h3, .specialty-card h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* ============================================
+     LANDSCAPE PHONE — short height
+     ============================================ */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero, .zee-hero { min-height: auto; padding: 6rem 2rem 3rem; }
+  }
+
+  /* ============================================
+     PRINT — clean output
+     ============================================ */
+  @media print {
+    .nav, .sticky-cta, .menu-toggle, .footer { display: none; }
+    body { background: white; color: black; }
+    .hero, .zee-hero, .page-header { padding-top: 1rem; }
+  }
+
+  /* ============================================
+     ACCESSIBILITY — reduced motion
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+
+  /* ============================================
+     ACCESSIBILITY — WCAG 2.1 AA
+     ============================================ */
+
+  /* Skip-to-content link — invisible until focused */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--cream);
+    outline-offset: 2px;
+  }
+
+  /* Visible focus indicators for keyboard users */
+  *:focus { outline: none; }
+  *:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+  }
+  .final-cta a:focus-visible,
+  .final-cta button:focus-visible,
+  .footer a:focus-visible,
+  .zee-purchase a:focus-visible {
+    outline-color: var(--cream);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="zee.html" class="active" aria-current="page">Where is Zee?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://sarah-bipath.clientsecure.me" class="btn-nav">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ===== HERO ===== -->
+<section class="zee-hero">
+  <span class="zee-star s1" aria-hidden="true">✦</span>
+  <span class="zee-star s2" aria-hidden="true">✦</span>
+  <span class="zee-star s3" aria-hidden="true">✦</span>
+  <div class="zee-hero-inner">
+    <div class="zee-hero-content">
+      <div class="zee-eyebrow">A Children's Book <span class="heart">♥</span> By Sarah Bipath</div>
+      <h1>Where is <em>Zee?</em></h1>
+      <p class="zee-hero-tagline">A first birthday gift, a love letter, and an invitation to the magic of early reading.</p>
+      <p class="zee-hero-sub">Written by speech-language pathologist and first-time mama Sarah Bipath, this heartfelt story honors the bond between mother and child — and the timeless ritual of reading together.</p>
+      <div class="zee-ctas">
+        <a href="https://a.co/d/9w7f9F6" target="_blank" rel="noopener" class="btn-primary-zee">
+          Purchase on Amazon
+          <span style="font-size: 1.1rem;">→</span>
+        </a>
+        <a href="#story" class="btn-secondary">Read the Story</a>
+      </div>
+    </div>
+    <div class="zee-book-display">
+      <div class="zee-author-photo">
+        <img src="images/sarah-with-zee.jpg" alt="Sarah Bipath holding her children's book Where is Zee?" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ASHA QUOTE ===== -->
+<section class="zee-quote">
+  <div class="zee-quote-inner">
+    <p>Literacy begins at birth, a period known as emergent literacy.</p>
+    <div class="zee-quote-attribution">— American Speech-Language-Hearing Association (ASHA)</div>
+  </div>
+</section>
+
+<!-- ===== INSPIRATION / STORY ===== -->
+<section class="zee-story" id="story">
+  <div class="zee-story-inner">
+    <div class="zee-story-image">
+      <div class="zee-story-image-circle">
+        <svg class="zee-story-image-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="zee-story-content">
+      <div class="section-eyebrow">What inspired this venture?</div>
+      <h2>A first birthday, <em>a timeless gift.</em></h2>
+      <p>Sarah is a speech-language pathologist, a first-time mama, and now an indie author — a combination she didn't entirely plan, but one that came together through love.</p>
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: var(--taupe-dark); border-left: 3px solid var(--terracotta-dark); padding: 0.5rem 0 0.5rem 1.5rem; margin: 2rem 0;">"In honor of my son's first birthday, I wanted to gift him something timeless. What better way to commemorate our first year as mother and son than to honor the pastime we cherish — reading."</p>
+      <p style="font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta-dark); font-weight: 600; margin-top: -1rem;">— Sarah</p>
+      <div class="zee-story-roles">
+        <span class="role-tag">Speech-Language Pathologist</span>
+        <span class="role-tag">First-Time Mama</span>
+        <span class="role-tag highlight">Indie Author</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY IT MATTERS ===== -->
+<section class="zee-why">
+  <div class="zee-why-inner">
+    <div class="zee-why-header">
+      <div class="zee-eyebrow" style="justify-content: center;">Why Reading Matters Early</div>
+      <h2>Every page turn <em>builds a future.</em></h2>
+      <p>As a speech-language pathologist, Sarah knows that the seeds of communication are planted long before a child speaks their first word. Here's why early reading is one of the most powerful gifts you can give.</p>
+    </div>
+
+    <div class="zee-why-grid">
+      <div class="zee-why-card">
+        <div class="zee-why-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+            <circle cx="12" cy="9" r="3"/>
+          </svg>
+        </div>
+        <h3>Bonding</h3>
+        <p>Reading together creates moments of closeness — your voice, your warmth, your attention. These shared rituals shape a child's sense of safety and connection.</p>
+      </div>
+
+      <div class="zee-why-card">
+        <div class="zee-why-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3>Language Development</h3>
+        <p>Hearing words, rhythms, and stories from infancy builds the vocabulary and listening skills children draw from when they begin to speak — and later, to read.</p>
+      </div>
+
+      <div class="zee-why-card">
+        <div class="zee-why-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+          </svg>
+        </div>
+        <h3>Imagination</h3>
+        <p>Stories invite children into worlds beyond their own — building empathy, creativity, and the curiosity that fuels lifelong learning. It all starts with one book.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PURCHASE CTA ===== -->
+<section class="zee-purchase">
+  <div class="zee-purchase-inner">
+    <div class="section-eyebrow">Bring Zee Home</div>
+    <h2>Start the story <em>tonight.</em></h2>
+    <p>"Where is Zee?" is available now on Amazon — perfect as a gift, a baby shower keepsake, or simply the next book in your bedtime rotation.</p>
+    <a href="https://a.co/d/9w7f9F6" target="_blank" rel="noopener" class="btn-purchase">
+      Purchase on Amazon
+      <span style="font-size: 1.2rem;">→</span>
+    </a>
+    <p class="zee-purchase-note">A heartfelt children's book, lovingly written and independently published.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Sarah's T.A.S.K.</a>
+      <p>Tactically Aligned Speech Know-How's. A private practice in Central Florida providing tailored speech therapy services with compassion at the center.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li><li><a href="zee.html">Where is Zee?</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4074503418">407-450-3418</a></li>
+        <li><a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a></li>
+        <li>Saint Cloud & Maitland, FL</li>
+        <li>Virtual: FL · NY · CA · NC · MO · VA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Sarah's T.A.S.K. All rights reserved.</div>
+    <div>Compassion in our hearts, you in our minds.</div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="https://a.co/d/9w7f9F6" target="_blank" rel="noopener">Get Where is Zee? on Amazon →</a>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('is-active', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 2px 20px rgba(92, 79, 68, 0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

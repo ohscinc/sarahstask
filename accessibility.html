@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#5d6e58">
+<title>Accessibility Statement — Sarah's T.A.S.K.</title>
+<meta name="description" content="Sarah's T.A.S.K. is committed to ensuring digital accessibility for all visitors. Read our accessibility statement and how to contact us with feedback.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f2ec;
+    --cream-soft: #fbf8f4;
+    --warm-white: #fdfbf8;
+    --taupe: #8a7868;
+    --taupe-dark: #5c4f44;
+    --sage: #7a8b75;
+    --sage-dark: #5d6e58;
+    --terracotta: #c8917a;
+    --ink: #2e2823;
+    --muted: #6b5e54;
+    --line: #e4dcd1;
+    --shadow: 0 8px 32px rgba(92, 79, 68, 0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--taupe-dark);
+  }
+  a { color: var(--sage-dark); transition: all 0.3s ease; }
+  a:hover { color: var(--taupe-dark); }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: -100px; left: 1rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 1000;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* Focus styles */
+  *:focus { outline: none; }
+  *:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Nav */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--taupe-dark);
+    text-decoration: none;
+  }
+  .logo span { color: var(--sage-dark); font-style: italic; }
+  .back-link {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .back-link:hover { color: var(--sage-dark); }
+
+  /* Page content */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 9rem 2rem 5rem;
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1.5rem;
+  }
+  .page-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--sage-dark);
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+  h1 em { font-style: italic; color: var(--sage-dark); font-weight: 400; }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 3rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { padding-top: 0; border-top: none; margin-top: 0; }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--taupe-dark);
+  }
+
+  p {
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  ul, ol {
+    margin: 0 0 1.5rem 1.25rem;
+    padding-left: 0.5rem;
+  }
+  li { margin-bottom: 0.5rem; line-height: 1.7; }
+
+  .info-card {
+    background: var(--cream-soft);
+    border-left: 3px solid var(--sage-dark);
+    padding: 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin: 2rem 0;
+  }
+  .info-card p:last-child { margin-bottom: 0; }
+
+  .last-updated {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .nav { padding: 1rem 1.25rem; }
+    .nav-inner { gap: 1rem; }
+    main { padding: 7rem 1.25rem 4rem; }
+    .back-link { font-size: 0.8rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="page-eyebrow">Accessibility</div>
+  <h1>Our commitment to <em>digital access for all.</em></h1>
+  <p class="lead">Sarah's T.A.S.K. believes everyone deserves equitable access to information about communication health. We've worked to make this website accessible to people of all abilities, and we're committed to continuing that effort over time.</p>
+
+  <h2>Our standards</h2>
+  <p>This website has been designed and developed to conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong> — the international standard for accessible web content published by the World Wide Web Consortium (W3C). These guidelines explain how to make web content more accessible to people with a wide range of disabilities including visual, auditory, physical, speech, cognitive, language, learning, and neurological differences.</p>
+
+  <h2>Accessibility features built into this site</h2>
+  <p>We've incorporated specific features to support accessibility, including:</p>
+  <ul>
+    <li><strong>Keyboard navigation:</strong> Every interactive element on the site can be reached and activated using only a keyboard</li>
+    <li><strong>Skip-to-content links:</strong> Keyboard users can jump past the navigation directly to the main content of each page</li>
+    <li><strong>Screen reader support:</strong> Pages use proper semantic HTML, ARIA labels, and landmark regions so assistive technology can navigate effectively</li>
+    <li><strong>Visible focus indicators:</strong> A clearly visible outline shows keyboard users which element is currently focused</li>
+    <li><strong>Descriptive image alternatives:</strong> All meaningful images include alt text describing their content</li>
+    <li><strong>Reduced motion support:</strong> Animations are disabled for users with the "Reduce Motion" preference enabled in their operating system</li>
+    <li><strong>Sufficient color contrast:</strong> Text and interactive elements meet or exceed the WCAG AA contrast requirements</li>
+    <li><strong>Responsive design:</strong> The site adapts gracefully across phones, tablets, and desktops, supporting browser zoom up to 200%</li>
+    <li><strong>Clear, plain-language content:</strong> Where possible, we use everyday language and explain clinical terms</li>
+    <li><strong>Multiple ways to contact us:</strong> Phone, email, online booking, and intake forms are all available</li>
+  </ul>
+
+  <h2>Known limitations</h2>
+  <p>While we strive for full accessibility, we acknowledge some areas may have limitations:</p>
+  <ul>
+    <li>Third-party booking services (e.g., Jane App at sarah-bipath.clientsecure.me) are governed by their own accessibility practices outside our direct control</li>
+    <li>Older browsers and assistive technologies may experience reduced functionality</li>
+    <li>If you encounter any barriers, we want to hear about it (see "Feedback" below)</li>
+  </ul>
+
+  <h2>Need help, or noticed a barrier?</h2>
+  <div class="info-card">
+    <p>If you're having trouble accessing any content on this site — or if you spot something that could work better for you — please let us know. We'll do our best to provide the information you need in a format that works for you, and we use feedback like yours to keep improving.</p>
+    <p style="margin-top: 1rem;"><strong>Phone:</strong> <a href="tel:4074503418">407-450-3418</a><br>
+    <strong>Email:</strong> <a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a></p>
+    <p style="margin-top: 1rem;">When contacting us, please describe the page you were on, the issue you encountered, and what assistive technology (if any) you were using. This helps us identify and resolve issues quickly.</p>
+  </div>
+
+  <h2>Alternative formats</h2>
+  <p>If you need information from this website in an alternative format — large print, plain text, audio, or another format — please reach out using the contact methods above and we'll work with you to make it available.</p>
+
+  <h2>Ongoing improvement</h2>
+  <p>Web accessibility is an ongoing effort, not a one-time project. We periodically review our content and code to identify and fix accessibility issues, and we incorporate accessibility into the design of any new pages or features.</p>
+
+  <p class="last-updated">This statement was last updated on May 4, 2026.</p>
+</main>
+
+</body>
+</html>

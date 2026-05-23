@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#5d6e58">
+<title>Page Not Found — Sarah's T.A.S.K.</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f2ec;
+    --cream-soft: #fbf8f4;
+    --warm-white: #fdfbf8;
+    --taupe: #8a7868;
+    --taupe-dark: #5c4f44;
+    --sage: #7a8b75;
+    --sage-dark: #5d6e58;
+    --terracotta: #c8917a;
+    --ink: #2e2823;
+    --muted: #6b5e54;
+    --line: #e4dcd1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    background: var(--cream-soft);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle at 1px 1px, rgba(138, 120, 104, 0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .container {
+    max-width: 580px;
+    text-align: center;
+  }
+  .four-oh-four {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(6rem, 18vw, 10rem);
+    color: var(--sage-dark);
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--sage-dark);
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--taupe-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--sage-dark);
+    font-weight: 400;
+  }
+  p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(93, 110, 88, 0.25);
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(93, 110, 88, 0.35);
+  }
+  .links {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .links a:hover {
+    color: var(--sage-dark);
+    border-color: var(--sage-dark);
+  }
+
+  /* ============================================
+     ACCESSIBILITY — WCAG 2.1 AA
+     ============================================ */
+
+  /* Skip-to-content link — invisible until focused */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--cream);
+    outline-offset: 2px;
+  }
+
+  /* Visible focus indicators for keyboard users */
+  *:focus { outline: none; }
+  *:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+  }
+  .final-cta a:focus-visible,
+  .final-cta button:focus-visible,
+  .footer a:focus-visible,
+  .zee-purchase a:focus-visible {
+    outline-color: var(--cream);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content">
+  <div class="container">
+    <div class="four-oh-four">404</div>
+    <div class="eyebrow">Page Not Found</div>
+    <h1>This page <em>wandered off.</em></h1>
+    <p>We couldn't find the page you were looking for. It may have moved, or perhaps the link was mistyped. Let's get you back on track.</p>
+    <a href="index.html" class="btn">
+      Return Home
+      <span style="font-size: 1.1rem;">→</span>
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="zee.html">Where is Zee?</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>

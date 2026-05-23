@@ -1,0 +1,7 @@
+.cache/
+.config/
+.local/
+.npm/
+.npm-global/
+.npmrc
+.DS_Store

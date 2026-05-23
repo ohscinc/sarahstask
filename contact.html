@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#5d6e58">
+<title>Contact — Sarah's T.A.S.K. Speech Therapy</title>
+<meta name="description" content="Get in touch with Sarah's T.A.S.K. — book a free consultation, call 407-450-3418, or send a message. Serving Central Florida and virtually across FL, NY, CA, NC, MO, VA.">
+<!-- Open Graph (Facebook, LinkedIn, iMessage, Slack) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sarahstask.com/contact.html">
+<meta property="og:title" content="Contact — Sarah's T.A.S.K. Speech Therapy">
+<meta property="og:description" content="Book a free 15-minute consultation. Serving Central Florida in person and FL, NY, CA, NC, MO, VA virtually.">
+<meta property="og:image" content="https://www.sarahstask.com/images/sarah-hero.jpg">
+<meta property="og:site_name" content="Sarah's T.A.S.K.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Sarah's T.A.S.K. Speech Therapy">
+<meta name="twitter:description" content="Book a free 15-minute consultation. Serving Central Florida in person and FL, NY, CA, NC, MO, VA virtually.">
+<meta name="twitter:image" content="https://www.sarahstask.com/images/sarah-hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f2ec;
+    --cream-soft: #fbf8f4;
+    --warm-white: #fdfbf8;
+    --taupe: #8a7868;
+    --taupe-dark: #5c4f44;
+    --sage: #7a8b75;
+    --sage-dark: #5d6e58;
+    --terracotta: #c8917a;
+    --ink: #2e2823;
+    --muted: #6b5e54;
+    --line: #e4dcd1;
+    --shadow: 0 8px 32px rgba(92, 79, 68, 0.08);
+    --shadow-lg: 0 20px 60px rgba(92, 79, 68, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--taupe-dark);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--taupe-dark); letter-spacing: 0.02em; }
+  .logo span { color: var(--sage-dark); font-style: italic; }
+  .nav-links { display: flex; gap: 2.25rem; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); letter-spacing: 0.03em; position: relative; }
+  .nav-links a:hover, .nav-links a.active { color: var(--sage-dark); }
+  .nav-links a:not(.btn-nav)::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--sage-dark); transition: width 0.3s ease;
+  }
+  .nav-links a:not(.btn-nav):hover::after, .nav-links a.active::after { width: 100%; }
+  .btn-nav { background: var(--sage-dark); color: var(--warm-white) !important; padding: 0.65rem 1.4rem; border-radius: 999px; font-size: 0.85rem; }
+  .btn-nav:hover { background: var(--taupe-dark); transform: translateY(-1px); }
+  .btn-nav::after { display: none !important; }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    position: relative;
+  }
+  .menu-toggle span {
+    position: absolute;
+    left: 4px;
+    width: 24px;
+    height: 1.5px;
+    background: var(--taupe-dark);
+    transition: transform 0.3s ease, opacity 0.2s ease, top 0.3s ease;
+    border-radius: 1px;
+  }
+  .menu-toggle span:nth-child(1) { top: 10px; }
+  .menu-toggle span:nth-child(2) { top: 16px; }
+  .menu-toggle span:nth-child(3) { top: 22px; }
+  .menu-toggle.is-active span:nth-child(1) { top: 16px; transform: rotate(45deg); }
+  .menu-toggle.is-active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .menu-toggle.is-active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
+
+  /* ===== PAGE HEADER ===== */
+  .page-header {
+    padding: 9rem 2.5rem 5rem;
+    background:
+      radial-gradient(ellipse at top right, rgba(122, 139, 117, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(200, 145, 122, 0.06), transparent 60%),
+      var(--cream-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(138, 120, 104, 0.07) 1px, transparent 0);
+    background-size: 32px 32px; pointer-events: none;
+  }
+  .page-header-inner { max-width: 1280px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .page-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage-dark); margin-bottom: 1.5rem;
+  }
+  .page-eyebrow::before, .page-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--sage-dark); }
+  .page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.25rem; }
+  .page-header h1 em { font-style: italic; color: var(--sage-dark); font-weight: 400; }
+  .page-header > .page-header-inner > p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+  /* ===== QUICK CONTACT CARDS ===== */
+  .quick-contact {
+    padding: 6rem 2.5rem 3rem;
+    background: var(--warm-white);
+  }
+
+  .quick-contact-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    background: var(--cream-soft);
+    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--sage);
+  }
+
+  .contact-card.featured {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-soft) 100%);
+    border-top: 3px solid var(--sage-dark);
+  }
+
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--warm-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-dark);
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--line);
+  }
+
+  .contact-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-card-action {
+    margin-top: auto;
+  }
+
+  .btn-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-card:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-card-outline {
+    background: transparent;
+    color: var(--taupe-dark);
+    border: 1px solid var(--taupe);
+  }
+
+  .btn-card-outline:hover {
+    background: var(--taupe-dark);
+    color: var(--warm-white);
+    border-color: var(--taupe-dark);
+  }
+
+  /* ===== FORM SECTION ===== */
+  .form-section {
+    padding: 5rem 2.5rem 7rem;
+    background: var(--warm-white);
+  }
+
+  .form-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .form-info .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage-dark); margin-bottom: 1rem;
+  }
+
+  .form-info h2 {
+    font-size: clamp(1.85rem, 3vw, 2.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-info h2 em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+
+  .form-info > p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-list {
+    list-style: none;
+    margin-top: 2rem;
+  }
+
+  .info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .info-list li:last-child { border-bottom: none; }
+
+  .info-list-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-dark);
+    flex-shrink: 0;
+  }
+
+  .info-list-content {
+    flex: 1;
+  }
+
+  .info-list-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .info-list-value {
+    font-size: 0.95rem;
+    color: var(--taupe-dark);
+    font-weight: 500;
+  }
+
+  .info-list-value a {
+    border-bottom: 1px dotted var(--taupe);
+  }
+
+  .info-list-value a:hover {
+    color: var(--sage-dark);
+    border-color: var(--sage-dark);
+  }
+
+  /* ===== FORM ===== */
+  .contact-form {
+    background: var(--cream-soft);
+    padding: 3rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-label .required {
+    color: var(--terracotta);
+    margin-left: 2px;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--sage-dark);
+    box-shadow: 0 0 0 3px rgba(93, 110, 88, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 140px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c4f44' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    appearance: none;
+  }
+
+  .form-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--sage-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .form-checkbox-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 1rem 2.25rem;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(93, 110, 88, 0.25);
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .btn-submit:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(93, 110, 88, 0.35);
+  }
+
+  .form-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .form-success {
+    display: none;
+    background: var(--cream);
+    border-left: 3px solid var(--sage-dark);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-success.active { display: block; }
+
+  .form-success h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--sage-dark);
+  }
+
+  .form-success p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+
+  /* ===== INTAKE CARD (replaces old form) ===== */
+  .intake-card {
+    background: var(--cream-soft);
+    padding: 3rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--sage-dark);
+    text-align: left;
+  }
+
+  .intake-card-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--warm-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-dark);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 12px rgba(93, 110, 88, 0.1);
+  }
+
+  .intake-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.85rem;
+    color: var(--taupe-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .intake-tagline {
+    font-size: 0.98rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .intake-steps {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .intake-steps li {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+
+  .intake-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(93, 110, 88, 0.25);
+  }
+
+  .intake-steps li > div {
+    flex: 1;
+  }
+
+  .intake-steps strong {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--taupe-dark);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.01em;
+  }
+
+  .intake-steps span {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .btn-intake {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 1.1rem 1.75rem;
+    border-radius: 999px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 16px rgba(93, 110, 88, 0.25);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .btn-intake:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(93, 110, 88, 0.35);
+  }
+
+  .intake-secure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .intake-secure svg {
+    color: var(--sage-dark);
+    flex-shrink: 0;
+  }
+
+  .intake-alternate {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .intake-alternate p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .intake-alternate a {
+    color: var(--taupe-dark);
+    font-weight: 600;
+    border-bottom: 1px dotted var(--taupe);
+  }
+
+  .intake-alternate a:hover {
+    color: var(--sage-dark);
+    border-color: var(--sage-dark);
+  }
+
+  @media (max-width: 640px) {
+    .intake-card { padding: 2rem 1.5rem; }
+    .intake-card-icon { width: 56px; height: 56px; }
+    .intake-card h3 { font-size: 1.6rem; }
+  }
+
+  /* ===== LOCATION ===== */
+  .location {
+    padding: 7rem 2.5rem;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .location::before {
+    content: '';
+    position: absolute;
+    bottom: -150px; right: -150px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(122, 139, 117, 0.1), transparent);
+    border-radius: 50%;
+  }
+
+  .location-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .location-header {
+    max-width: 720px;
+    margin: 0 auto 4rem;
+  }
+
+  .location-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .location-header h2 em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+
+  .location-header p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .location-card {
+    background: var(--warm-white);
+    padding: 3rem 2.5rem;
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: var(--shadow);
+  }
+
+  .location-card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .location-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-card .location-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .location-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .location-list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .location-list li {
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .location-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sage-dark);
+    font-weight: 600;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .final-cta-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .final-cta .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); margin-bottom: 1rem;
+  }
+  .final-cta h2 { color: var(--warm-white); font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1.5rem; }
+  .final-cta h2 em { font-style: italic; color: rgba(255,255,255,0.85); }
+  .final-cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.7; }
+  .btn-primary {
+    background: var(--warm-white); color: var(--taupe-dark);
+    padding: 1rem 2rem; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .btn-primary:hover { background: var(--cream); color: var(--sage-dark); transform: translateY(-2px); }
+  .final-cta-note { margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.6); font-style: italic; }
+
+  /* ===== FOOTER ===== */
+  .footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 5rem 2.5rem 2rem; }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem;
+  }
+  .footer-brand .logo { color: var(--cream); font-size: 1.75rem; margin-bottom: 1rem; display: block; }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+  .footer-col h4 {
+    color: var(--cream); font-size: 0.85rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 1.25rem; font-family: 'Lato', sans-serif; font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { padding: 0.4rem 0; font-size: 0.9rem; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* ===== STICKY MOBILE CTA ===== */
+  .sticky-cta { display: none; position: fixed; bottom: 1rem; left: 1rem; right: 1rem; z-index: 99; }
+  .sticky-cta a {
+    display: block; background: var(--sage-dark); color: var(--warm-white);
+    text-align: center; padding: 1rem; border-radius: 999px;
+    font-weight: 500; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 968px) {
+    .quick-contact-inner { grid-template-columns: 1fr; }
+    .form-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .nav { padding: 1rem 1.25rem; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--warm-white); flex-direction: column;
+      padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .page-header { padding: 7rem 1.25rem 4rem; }
+    .quick-contact { padding: 4rem 1.25rem 2rem; }
+    .form-section { padding: 3rem 1.25rem 5rem; }
+    .contact-form { padding: 2rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .location { padding: 5rem 1.25rem; }
+    .location-card { padding: 2rem 1.5rem; }
+    .final-cta { padding: 5rem 1.25rem; }
+    .footer { padding: 4rem 1.25rem 2rem; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .sticky-cta { display: block; }
+  }
+
+  /* ============================================
+     RESPONSIVE ENHANCEMENTS — applies to all pages
+     Layered over base styles via cascade
+     ============================================ */
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* iOS Safari: prefer dvh over vh where supported */
+  @supports (height: 100dvh) {
+    .hero, .zee-hero {
+      min-height: 100dvh;
+    }
+  }
+
+  /* Prevent any element from causing horizontal overflow */
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure all interactive elements meet 44px minimum touch target on mobile */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav,
+    .btn-card,
+    .btn-purchase,
+    .btn-primary-zee,
+    .btn-submit,
+    .nav-links a,
+    .jump-link,
+    .faq-question,
+    .menu-toggle {
+      min-height: 44px;
+    }
+    .nav-links a:not(.btn-nav) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  /* ============================================
+     LARGE DESKTOP — 1440px+
+     Cap content width, scale up typography slightly
+     ============================================ */
+  @media (min-width: 1440px) {
+    .nav-inner,
+    .hero-inner,
+    .zee-hero-inner,
+    .page-header-inner,
+    .section-inner,
+    .quick-contact-inner,
+    .form-inner,
+    .location-inner,
+    .credentials-inner,
+    .experience-inner,
+    .mission-inner,
+    .intro-inner,
+    .category-inner,
+    .process-inner,
+    .zee-story-inner,
+    .zee-why-inner,
+    .footer-inner,
+    .trust-inner,
+    .final-cta-inner,
+    .zee-purchase-inner,
+    .pullquote-inner,
+    .zee-quote-inner {
+      max-width: 1400px;
+    }
+  }
+
+  /* ============================================
+     TABLET LANDSCAPE / SMALL LAPTOP — 1024px
+     Many things stay 2-col but with tighter gaps
+     ============================================ */
+  @media (max-width: 1024px) {
+    .nav { padding: 1rem 1.75rem; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.85rem; }
+
+    .hero, .zee-hero {
+      padding: 8rem 1.75rem 4rem;
+    }
+    .hero-inner, .zee-hero-inner {
+      gap: 3rem;
+    }
+
+    .page-header { padding: 8rem 1.75rem 4rem; }
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase, .pullquote,
+    .zee-quote, .services, .sarah, .faq, .trust {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .footer { padding: 4rem 1.75rem 2rem; }
+
+    /* Cred grid stays 2 columns instead of 3 */
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Settings grid: 3 across */
+    .settings-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ============================================
+     TABLET PORTRAIT — 900px
+     Single-column layouts begin
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-inner, .zee-hero-inner,
+    .sarah-inner, .intro-inner, .zee-story-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-visual, .sarah-image, .intro-image, .zee-story-image, .zee-book {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .services-grid,
+    .specialty-grid,
+    .zee-why-grid,
+    .location-grid,
+    .quick-contact-inner,
+    .mission-inner,
+    .form-inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .form-inner { gap: 3rem; }
+
+    .service-card.featured {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .settings-grid { grid-template-columns: repeat(2, 1fr); }
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .category-header { grid-template-columns: 1fr; gap: 1rem; }
+    .category-marker { font-size: 4rem; }
+
+    /* Tone down decorative absolute elements that can overflow */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 12rem;
+    }
+  }
+
+  /* ============================================
+     LARGE PHONE / SMALL TABLET — 768px
+     Show mobile nav, scale typography down further
+     ============================================ */
+  @media (max-width: 768px) {
+    .nav { padding: 0.9rem 1.25rem; }
+    .nav-inner { position: relative; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: -1.25rem;
+      right: -1.25rem;
+      background: var(--warm-white);
+      flex-direction: column;
+      padding: 1.5rem 1.25rem;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(92, 79, 68, 0.1);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 0.5rem;
+    }
+    .nav-links a.btn-nav {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .hero, .zee-hero { padding: 7rem 1.25rem 4rem; }
+
+    .hero h1, .zee-hero h1, .page-header h1 {
+      font-size: clamp(2rem, 8vw, 2.75rem);
+    }
+
+    .hero-sub, .zee-hero-sub {
+      font-size: 1rem;
+    }
+
+    .hero-badge {
+      left: 1rem; bottom: 1rem;
+      max-width: 200px;
+      padding: 1rem 1.25rem;
+    }
+
+    .hero-ctas, .zee-ctas {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-secondary, .btn-primary-zee {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .page-header { padding: 7rem 1.25rem 3.5rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .pullquote, .zee-quote { padding: 4rem 1.25rem; }
+    .trust { padding: 1.5rem 1.25rem; }
+
+    .trust-inner {
+      gap: 0.75rem 1.25rem;
+      font-size: 0.7rem;
+    }
+
+    .settings-grid, .cred-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-row .form-group:not(:last-child) { margin-bottom: 1.25rem; }
+
+    .contact-form { padding: 2rem 1.5rem; }
+
+    .jump-nav { padding: 1rem 1.25rem; top: 60px; }
+    .jump-nav-inner { gap: 1.25rem; }
+    .jump-link { font-size: 0.7rem; }
+
+    .faq-question { font-size: 1.1rem; padding: 1.25rem 0; }
+    .faq-item.open .faq-answer { max-height: 800px; padding-bottom: 1.25rem; }
+
+    .pullquote p, .zee-quote p {
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 8rem;
+    }
+
+    .sticky-cta { display: block; }
+
+    /* Footer: ensure nothing overflows */
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ============================================
+     SMALL PHONE — 480px (iPhone SE, smaller Androids)
+     ============================================ */
+  @media (max-width: 480px) {
+    .nav { padding: 0.85rem 1rem; }
+    .logo { font-size: 1.3rem; }
+
+    .hero, .zee-hero { padding: 6rem 1rem 3rem; }
+
+    .hero h1, .zee-hero h1 {
+      font-size: clamp(1.85rem, 9vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .hero-eyebrow, .zee-eyebrow, .page-eyebrow, .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-sub, .zee-hero-sub { font-size: 0.95rem; }
+
+    .page-header { padding: 6rem 1rem 3rem; }
+    .page-header h1 { font-size: clamp(1.85rem, 9vw, 2.4rem); }
+    .page-header > .page-header-inner > p { font-size: 1rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .pullquote, .zee-quote { padding: 3.5rem 1rem; }
+    .trust { padding: 1.25rem 1rem; }
+
+    .footer { padding: 3.5rem 1rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+    .service-card, .service-item, .specialty-card, .contact-card,
+    .location-card, .mission-card, .zee-why-card, .step,
+    .credentials .cred-item, .setting-card {
+      padding: 1.75rem 1.5rem;
+    }
+
+    .service-card.featured { padding: 2rem 1.5rem; }
+    .contact-form { padding: 1.75rem 1.25rem; }
+
+    .hero-badge {
+      left: 0.75rem; bottom: 0.75rem;
+      max-width: 180px;
+      padding: 0.85rem 1rem;
+    }
+    .hero-badge-text { font-size: 0.95rem; }
+
+    .btn-primary, .btn-primary-zee, .btn-purchase, .btn-submit, .btn-card {
+      font-size: 0.9rem;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .jump-nav-inner { gap: 1rem; }
+    .jump-link { font-size: 0.65rem; letter-spacing: 0.1em; }
+
+    .sticky-cta { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; }
+    .sticky-cta a { font-size: 0.9rem; padding: 0.85rem; }
+
+    /* Smaller decorative elements on tiny screens */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 6rem;
+    }
+
+    .category-marker { font-size: 3.5rem; }
+
+    .service-card h3, .service-item h3, .specialty-card h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* ============================================
+     LANDSCAPE PHONE — short height
+     ============================================ */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero, .zee-hero { min-height: auto; padding: 6rem 2rem 3rem; }
+  }
+
+  /* ============================================
+     PRINT — clean output
+     ============================================ */
+  @media print {
+    .nav, .sticky-cta, .menu-toggle, .footer { display: none; }
+    body { background: white; color: black; }
+    .hero, .zee-hero, .page-header { padding-top: 1rem; }
+  }
+
+  /* ============================================
+     ACCESSIBILITY — reduced motion
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+
+  /* Final CTA button — attention-grabbing breathing glow */
+  .final-cta .btn-primary {
+    position: relative;
+    animation: ctaBreathe 3s ease-in-out infinite;
+  }
+
+  .final-cta .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    animation: ctaPulse 3s ease-out infinite;
+    pointer-events: none;
+  }
+
+  .final-cta .btn-primary:hover {
+    animation-play-state: paused;
+  }
+
+  .final-cta .btn-primary:hover::before {
+    animation-play-state: paused;
+  }
+
+  @keyframes ctaBreathe {
+    0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    50% { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  }
+
+  @keyframes ctaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+    70% { box-shadow: 0 0 0 18px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+  }
+
+  /* Pause animation when out of view to save resources */
+  @media (prefers-reduced-motion: reduce) {
+    .final-cta .btn-primary,
+    .final-cta .btn-primary::before {
+      animation: none !important;
+    }
+  }
+
+
+  /* ============================================
+     ACCESSIBILITY — WCAG 2.1 AA
+     ============================================ */
+
+  /* Skip-to-content link — invisible until focused */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--cream);
+    outline-offset: 2px;
+  }
+
+  /* Visible focus indicators for keyboard users */
+  *:focus { outline: none; }
+  *:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+  }
+  .final-cta a:focus-visible,
+  .final-cta button:focus-visible,
+  .footer a:focus-visible,
+  .zee-purchase a:focus-visible {
+    outline-color: var(--cream);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="zee.html">Where is Zee?</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      <li><a href="https://sarah-bipath.clientsecure.me" class="btn-nav">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Get In Touch</div>
+    <h1>We'd love to <em>hear from you.</em></h1>
+    <p>Whether you're ready to book, have a question, or just want to talk through what's going on — we're here. Reach out the way that's easiest for you.</p>
+  </div>
+</section>
+
+<!-- ===== QUICK CONTACT CARDS ===== -->
+<section class="quick-contact">
+  <div class="quick-contact-inner">
+    <div class="contact-card featured">
+      <div class="contact-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Book Online</h3>
+      <p>Schedule a free 15-minute consultation directly through our secure booking system. Quickest way to get started.</p>
+      <div class="contact-card-action">
+        <a href="https://sarah-bipath.clientsecure.me" class="btn-card">
+          Book Now <span style="font-size: 1rem;">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <h3>Call Us</h3>
+      <p>Prefer to talk? Give us a ring during business hours and we'll get you the answers you need.</p>
+      <div class="contact-card-action">
+        <a href="tel:4074503418" class="btn-card btn-card-outline">
+          407-450-3418
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Email Us</h3>
+      <p>Send a message anytime. We typically respond within one business day, often sooner.</p>
+      <div class="contact-card-action">
+        <a href="mailto:admin@sarahstask.com" class="btn-card btn-card-outline">
+          admin@sarahstask.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM SECTION ===== -->
+<section class="form-section">
+  <div class="form-inner">
+    <div class="form-info">
+      <div class="section-eyebrow">Start Your Intake</div>
+      <h2>Take the first step <em>online.</em></h2>
+      <p>Our secure intake form is the fastest way to get started. Share a little about your goals and we'll be in touch within one business day to confirm your free consultation.</p>
+
+      <ul class="info-list">
+        <li>
+          <div class="info-list-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="info-list-content">
+            <div class="info-list-label">Phone</div>
+            <div class="info-list-value"><a href="tel:4074503418">407-450-3418</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="info-list-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-list-content">
+            <div class="info-list-label">Email</div>
+            <div class="info-list-value"><a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="info-list-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-list-content">
+            <div class="info-list-label">Service Area</div>
+            <div class="info-list-value">Saint Cloud, Maitland & surrounding Central Florida</div>
+          </div>
+        </li>
+        <li>
+          <div class="info-list-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-list-content">
+            <div class="info-list-label">Response Time</div>
+            <div class="info-list-value">Within 1 business day</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="intake-card">
+      <div class="intake-card-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M9 16l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Free 15-Minute Consultation</h3>
+      <p class="intake-tagline">Begin your secure online intake — built right into our practice management system.</p>
+
+      <ul class="intake-steps">
+        <li>
+          <span class="intake-step-num">1</span>
+          <div>
+            <strong>Share your story</strong>
+            <span>Tell us a bit about who the care is for and what you're hoping to address.</span>
+          </div>
+        </li>
+        <li>
+          <span class="intake-step-num">2</span>
+          <div>
+            <strong>Pick a time that works</strong>
+            <span>Choose your preferred consultation slot directly in our booking system.</span>
+          </div>
+        </li>
+        <li>
+          <span class="intake-step-num">3</span>
+          <div>
+            <strong>Talk with Sarah</strong>
+            <span>A friendly 15-minute conversation — no pressure, no commitment.</span>
+          </div>
+        </li>
+      </ul>
+
+      <a href="https://sarah-bipath.clientsecure.me" target="_blank" rel="noopener" class="btn-intake">
+        Begin Intake & Book Consultation
+        <span style="font-size: 1.1rem;">→</span>
+      </a>
+
+      <div class="intake-secure">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>HIPAA-compliant · Powered by Jane App</span>
+      </div>
+
+      <div class="intake-alternate">
+        <p>Prefer to talk first? Call us at <a href="tel:4074503418">407-450-3418</a> or email <a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section class="location">
+  <div class="location-inner">
+    <div class="location-header">
+      <div class="page-eyebrow">Where We Work</div>
+      <h2>Two ways to <em>connect with care.</em></h2>
+      <p>Whether you prefer in-person sessions or the flexibility of virtual care, we make it easy to access the support you need.</p>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-card">
+        <div class="location-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="location-tag">In-Person Sessions</div>
+        <h3>Central Florida</h3>
+        <p>We provide in-person speech therapy services throughout Central Florida, with a focus on the Saint Cloud and Maitland communities.</p>
+        <ul class="location-list">
+          <li>Saint Cloud, FL</li>
+          <li>Maitland, FL</li>
+          <li>Orange, Osceola & Seminole counties</li>
+          <li>Surrounding Central Florida areas</li>
+        </ul>
+      </div>
+
+      <div class="location-card">
+        <div class="location-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="location-tag">Virtual Sessions</div>
+        <h3>Across Six States</h3>
+        <p>Secure, HIPAA-compliant teletherapy sessions available to clients in six states — perfect for busy families and adults with full schedules.</p>
+        <ul class="location-list">
+          <li>Florida (statewide)</li>
+          <li>New York (statewide)</li>
+          <li>California (statewide)</li>
+          <li>North Carolina (statewide)</li>
+          <li>Missouri (statewide)</li>
+          <li>Virginia (statewide)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="section-eyebrow">Ready to Begin?</div>
+    <h2>Skip the form — <em>book directly.</em></h2>
+    <p>If you already know you're ready, our online booking system is the fastest path to your free 15-minute consultation. Choose a time that works for you.</p>
+    <a href="https://sarah-bipath.clientsecure.me" class="btn-primary">
+      Book Your Free Consultation
+      <span style="font-size: 1.1rem;">→</span>
+    </a>
+    <p class="final-cta-note">No commitment. No pressure. Just a conversation.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Sarah's T.A.S.K.</a>
+      <p>Tactically Aligned Speech Know-How's. A private practice in Central Florida providing tailored speech therapy services with compassion at the center.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li><li><a href="zee.html">Where is Zee?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4074503418">407-450-3418</a></li>
+        <li><a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a></li>
+        <li>Saint Cloud & Maitland, FL</li>
+        <li>Virtual: FL · NY · CA · NC · MO · VA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Sarah's T.A.S.K. All rights reserved.</div>
+    <div>Compassion in our hearts, you in our minds.</div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="https://sarah-bipath.clientsecure.me">Book Free Consultation →</a>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('is-active', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 2px 20px rgba(92, 79, 68, 0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

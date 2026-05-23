@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#5d6e58">
+<title>Sarah's T.A.S.K. — Compassionate Speech Therapy in Central Florida & Virtual</title>
+<meta name="description" content="Personalized, evidence-based speech therapy for children and adults. Serving Central Florida in person and FL, NY, CA, NC, MO, VA virtually. Book a free consultation.">
+<!-- Open Graph (Facebook, LinkedIn, iMessage, Slack) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sarahstask.com/">
+<meta property="og:title" content="Sarah's T.A.S.K. — Compassionate Speech Therapy">
+<meta property="og:description" content="Personalized, evidence-based speech therapy for children and adults. Serving Central Florida in person and FL, NY, CA, NC, MO, VA virtually.">
+<meta property="og:image" content="https://www.sarahstask.com/images/sarah-hero.jpg">
+<meta property="og:site_name" content="Sarah's T.A.S.K.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarah's T.A.S.K. — Compassionate Speech Therapy">
+<meta name="twitter:description" content="Personalized, evidence-based speech therapy for children and adults. Serving Central Florida in person and FL, NY, CA, NC, MO, VA virtually.">
+<meta name="twitter:image" content="https://www.sarahstask.com/images/sarah-hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f2ec;
+    --cream-soft: #fbf8f4;
+    --warm-white: #fdfbf8;
+    --taupe: #8a7868;
+    --taupe-dark: #5c4f44;
+    --sage: #7a8b75;
+    --sage-dark: #5d6e58;
+    --terracotta: #c8917a;
+    --ink: #2e2823;
+    --muted: #6b5e54;
+    --line: #e4dcd1;
+    --shadow: 0 8px 32px rgba(92, 79, 68, 0.08);
+    --shadow-lg: 0 20px 60px rgba(92, 79, 68, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    background: var(--warm-white);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--taupe-dark);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+  /* ===== NAVIGATION ===== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--taupe-dark);
+    letter-spacing: 0.02em;
+  }
+
+  .logo span { color: var(--sage-dark); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 2.25rem;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    position: relative;
+  }
+
+  .nav-links a:hover { color: var(--sage-dark); }
+
+  .nav-links a:not(.btn-nav)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--sage-dark);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:not(.btn-nav):hover::after { width: 100%; }
+
+  .btn-nav {
+    background: var(--sage-dark);
+    color: var(--warm-white) !important;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+
+  .btn-nav:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-1px);
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    position: relative;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    left: 4px;
+    width: 24px;
+    height: 1.5px;
+    background: var(--taupe-dark);
+    transition: transform 0.3s ease, opacity 0.2s ease, top 0.3s ease;
+    border-radius: 1px;
+  }
+
+  .menu-toggle span:nth-child(1) { top: 10px; }
+  .menu-toggle span:nth-child(2) { top: 16px; }
+  .menu-toggle span:nth-child(3) { top: 22px; }
+
+  /* When menu is open, transform into an X */
+  .menu-toggle.is-active span:nth-child(1) {
+    top: 16px;
+    transform: rotate(45deg);
+  }
+  .menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .menu-toggle.is-active span:nth-child(3) {
+    top: 16px;
+    transform: rotate(-45deg);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 9rem 2.5rem 5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+      radial-gradient(ellipse at top right, rgba(122, 139, 117, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(200, 145, 122, 0.06), transparent 60%),
+      var(--cream-soft);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(138, 120, 104, 0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--sage-dark);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage-dark);
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.35s forwards;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .btn-primary {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(93, 110, 88, 0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(93, 110, 88, 0.35);
+  }
+
+  .btn-secondary {
+    color: var(--taupe-dark);
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--taupe);
+    border-radius: 0;
+  }
+
+  .btn-secondary:hover {
+    color: var(--sage-dark);
+    border-color: var(--sage-dark);
+  }
+
+  .hero-call {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.65s forwards;
+  }
+
+  .hero-call a {
+    color: var(--taupe-dark);
+    font-weight: 600;
+    border-bottom: 1px dotted var(--taupe);
+  }
+
+  .hero-call a:hover { color: var(--sage-dark); }
+
+  /* Hero Visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.4s forwards;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #d4c4b0 0%, #a8917a 100%);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 30%;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    background: var(--warm-white);
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--sage-dark);
+    max-width: 240px;
+  }
+
+  .hero-badge-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-badge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--taupe-dark);
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  /* ===== TRUST STRIP ===== */
+  .trust {
+    background: var(--cream);
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .trust-item::before {
+    content: '✦';
+    color: var(--sage-dark);
+    font-size: 0.7rem;
+  }
+
+  .trust-item:first-child::before { display: none; }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    padding: 7rem 2.5rem;
+  }
+
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+
+  .section-header p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  /* ===== SERVICES ===== */
+  .services {
+    background: var(--warm-white);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .service-card {
+    background: var(--cream-soft);
+    padding: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-soft) 100%);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--sage-dark);
+    transition: width 0.4s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--sage);
+  }
+
+  .service-card:hover::after { width: 100%; }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--sage-dark);
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  .service-card.featured .service-number {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+
+  .service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card.featured h3 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .service-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-list li {
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .service-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .service-link:hover {
+    gap: 0.85rem;
+    color: var(--taupe-dark);
+  }
+
+  /* ===== MEET SARAH ===== */
+  .sarah {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sarah::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(122, 139, 117, 0.1), transparent);
+    border-radius: 50%;
+  }
+
+  .sarah-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sarah-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: visible;
+  }
+
+  .sarah-image::before {
+    content: '';
+    position: absolute;
+    inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--terracotta) 100%);
+    border-radius: 4px;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .sarah-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+    background: var(--cream-soft);
+  }
+
+  .sarah-content .section-eyebrow { margin-bottom: 1rem; }
+
+  .sarah-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .sarah-credentials {
+    font-size: 0.95rem;
+    color: var(--sage-dark);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.75rem;
+    font-style: italic;
+  }
+
+  .sarah-bio {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .sarah-certs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .cert-tag {
+    background: var(--warm-white);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: var(--taupe-dark);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--line);
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    background: var(--warm-white);
+  }
+
+  .faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.75rem 0;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--taupe-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .faq-question:hover { color: var(--sage-dark); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--taupe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: var(--taupe-dark);
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--sage-dark);
+    border-color: var(--sage-dark);
+    color: var(--warm-white);
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 1000px;
+    padding-bottom: 1.75rem;
+  }
+
+  .faq-answer p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    padding-right: 3rem;
+  }
+
+  .faq-more {
+    margin-top: 3rem;
+    text-align: center;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--sage-dark);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--sage-dark);
+    transition: all 0.3s ease;
+  }
+
+  .faq-more-link:hover {
+    color: var(--taupe-dark);
+    border-color: var(--taupe-dark);
+    gap: 0.95rem;
+  }
+
+  .faq-more-link span {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    transition: transform 0.3s ease;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .final-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta .section-eyebrow { color: rgba(255,255,255,0.7); }
+
+  .final-cta h2 {
+    color: var(--warm-white);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta h2 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .final-cta p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .final-cta .btn-primary {
+    background: var(--warm-white);
+    color: var(--taupe-dark);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+
+  .final-cta .btn-primary:hover {
+    background: var(--cream);
+    color: var(--sage-dark);
+  }
+
+  .final-cta-note {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.7);
+    padding: 5rem 2.5rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .footer-brand .logo {
+    color: var(--cream);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    color: var(--cream);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ===== MOBILE STICKY CTA ===== */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 99;
+  }
+
+  .sticky-cta a {
+    display: block;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 999px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 968px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { max-width: 420px; margin: 0 auto; }
+    .sarah-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .sarah-image { max-width: 420px; margin: 0 auto; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card.featured { grid-column: span 1; grid-template-columns: 1fr; gap: 1rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .nav { padding: 1rem 1.25rem; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--warm-white);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .section { padding: 5rem 1.25rem; }
+    .trust { padding: 1.5rem 1.25rem; }
+    .trust-inner { gap: 1.25rem; font-size: 0.7rem; }
+    .final-cta { padding: 5rem 1.25rem; }
+    .footer { padding: 4rem 1.25rem 2rem; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-badge { left: 1rem; bottom: 1rem; max-width: 200px; padding: 1rem 1.25rem; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { justify-content: center; text-align: center; }
+    .sticky-cta { display: block; }
+    .faq-question { font-size: 1.15rem; }
+  }
+
+  /* ============================================
+     RESPONSIVE ENHANCEMENTS — applies to all pages
+     Layered over base styles via cascade
+     ============================================ */
+
+  /* Hero badge: when stacking on mobile, sit naturally below the photo
+     instead of floating absolutely (which can overlap text if image fails to load) */
+  @media (max-width: 900px) {
+    .hero-badge {
+      position: static !important;
+      max-width: none !important;
+      margin: 1.25rem auto 0;
+      width: fit-content;
+      bottom: auto;
+      left: auto;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* iOS Safari: prefer dvh over vh where supported */
+  @supports (height: 100dvh) {
+    .hero, .zee-hero {
+      min-height: 100dvh;
+    }
+  }
+
+  /* Prevent any element from causing horizontal overflow */
+  img, svg, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure all interactive elements meet 44px minimum touch target on mobile */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-nav,
+    .btn-card,
+    .btn-purchase,
+    .btn-primary-zee,
+    .btn-submit,
+    .nav-links a,
+    .jump-link,
+    .faq-question,
+    .menu-toggle {
+      min-height: 44px;
+    }
+    .nav-links a:not(.btn-nav) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  /* ============================================
+     LARGE DESKTOP — 1440px+
+     Cap content width, scale up typography slightly
+     ============================================ */
+  @media (min-width: 1440px) {
+    .nav-inner,
+    .hero-inner,
+    .zee-hero-inner,
+    .page-header-inner,
+    .section-inner,
+    .quick-contact-inner,
+    .form-inner,
+    .location-inner,
+    .credentials-inner,
+    .experience-inner,
+    .mission-inner,
+    .intro-inner,
+    .category-inner,
+    .process-inner,
+    .zee-story-inner,
+    .zee-why-inner,
+    .footer-inner,
+    .trust-inner,
+    .final-cta-inner,
+    .zee-purchase-inner,
+    .pullquote-inner,
+    .zee-quote-inner {
+      max-width: 1400px;
+    }
+  }
+
+  /* ============================================
+     TABLET LANDSCAPE / SMALL LAPTOP — 1024px
+     Many things stay 2-col but with tighter gaps
+     ============================================ */
+  @media (max-width: 1024px) {
+    .nav { padding: 1rem 1.75rem; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.85rem; }
+
+    .hero, .zee-hero {
+      padding: 8rem 1.75rem 4rem;
+    }
+    .hero-inner, .zee-hero-inner {
+      gap: 3rem;
+    }
+
+    .page-header { padding: 8rem 1.75rem 4rem; }
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase, .pullquote,
+    .zee-quote, .services, .sarah, .faq, .trust {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .footer { padding: 4rem 1.75rem 2rem; }
+
+    /* Cred grid stays 2 columns instead of 3 */
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Settings grid: 3 across */
+    .settings-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ============================================
+     TABLET PORTRAIT — 900px
+     Single-column layouts begin
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-inner, .zee-hero-inner,
+    .sarah-inner, .intro-inner, .zee-story-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-visual, .sarah-image, .intro-image, .zee-story-image, .zee-book {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .services-grid,
+    .specialty-grid,
+    .zee-why-grid,
+    .location-grid,
+    .quick-contact-inner,
+    .mission-inner,
+    .form-inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .form-inner { gap: 3rem; }
+
+    .service-card.featured {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .settings-grid { grid-template-columns: repeat(2, 1fr); }
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .category-header { grid-template-columns: 1fr; gap: 1rem; }
+    .category-marker { font-size: 4rem; }
+
+    /* Tone down decorative absolute elements that can overflow */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 12rem;
+    }
+  }
+
+  /* ============================================
+     LARGE PHONE / SMALL TABLET — 768px
+     Show mobile nav, scale typography down further
+     ============================================ */
+  @media (max-width: 768px) {
+    .nav { padding: 0.9rem 1.25rem; }
+    .nav-inner { position: relative; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: -1.25rem;
+      right: -1.25rem;
+      background: var(--warm-white);
+      flex-direction: column;
+      padding: 1.5rem 1.25rem;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(92, 79, 68, 0.1);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 0.5rem;
+    }
+    .nav-links a.btn-nav {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .hero, .zee-hero { padding: 7rem 1.25rem 4rem; }
+
+    .hero h1, .zee-hero h1, .page-header h1 {
+      font-size: clamp(2rem, 8vw, 2.75rem);
+    }
+
+    .hero-sub, .zee-hero-sub {
+      font-size: 1rem;
+    }
+
+    .hero-badge {
+      left: 1rem; bottom: 1rem;
+      max-width: 200px;
+      padding: 1rem 1.25rem;
+    }
+
+    .hero-ctas, .zee-ctas {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-secondary, .btn-primary-zee {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .page-header { padding: 7rem 1.25rem 3.5rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .pullquote, .zee-quote { padding: 4rem 1.25rem; }
+    .trust { padding: 1.5rem 1.25rem; }
+
+    .trust-inner {
+      gap: 0.75rem 1.25rem;
+      font-size: 0.7rem;
+    }
+
+    .settings-grid, .cred-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-row .form-group:not(:last-child) { margin-bottom: 1.25rem; }
+
+    .contact-form { padding: 2rem 1.5rem; }
+
+    .jump-nav { padding: 1rem 1.25rem; top: 60px; }
+    .jump-nav-inner { gap: 1.25rem; }
+    .jump-link { font-size: 0.7rem; }
+
+    .faq-question { font-size: 1.1rem; padding: 1.25rem 0; }
+    .faq-item.open .faq-answer { max-height: 800px; padding-bottom: 1.25rem; }
+
+    .pullquote p, .zee-quote p {
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 8rem;
+    }
+
+    .sticky-cta { display: block; }
+
+    /* Footer: ensure nothing overflows */
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ============================================
+     SMALL PHONE — 480px (iPhone SE, smaller Androids)
+     ============================================ */
+  @media (max-width: 480px) {
+    .nav { padding: 0.85rem 1rem; }
+    .logo { font-size: 1.3rem; }
+
+    .hero, .zee-hero { padding: 6rem 1rem 3rem; }
+
+    .hero h1, .zee-hero h1 {
+      font-size: clamp(1.85rem, 9vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .hero-eyebrow, .zee-eyebrow, .page-eyebrow, .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-sub, .zee-hero-sub { font-size: 0.95rem; }
+
+    .page-header { padding: 6rem 1rem 3rem; }
+    .page-header h1 { font-size: clamp(1.85rem, 9vw, 2.4rem); }
+    .page-header > .page-header-inner > p { font-size: 1rem; }
+
+    .section, .category, .experience, .credentials, .mission,
+    .intro, .quick-contact, .form-section, .location, .process,
+    .zee-story, .zee-why, .final-cta, .zee-purchase {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .pullquote, .zee-quote { padding: 3.5rem 1rem; }
+    .trust { padding: 1.25rem 1rem; }
+
+    .footer { padding: 3.5rem 1rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+    .service-card, .service-item, .specialty-card, .contact-card,
+    .location-card, .mission-card, .zee-why-card, .step,
+    .credentials .cred-item, .setting-card {
+      padding: 1.75rem 1.5rem;
+    }
+
+    .service-card.featured { padding: 2rem 1.5rem; }
+    .contact-form { padding: 1.75rem 1.25rem; }
+
+    .hero-badge {
+      left: 0.75rem; bottom: 0.75rem;
+      max-width: 180px;
+      padding: 0.85rem 1rem;
+    }
+    .hero-badge-text { font-size: 0.95rem; }
+
+    .btn-primary, .btn-primary-zee, .btn-purchase, .btn-submit, .btn-card {
+      font-size: 0.9rem;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .jump-nav-inner { gap: 1rem; }
+    .jump-link { font-size: 0.65rem; letter-spacing: 0.1em; }
+
+    .sticky-cta { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; }
+    .sticky-cta a { font-size: 0.9rem; padding: 0.85rem; }
+
+    /* Smaller decorative elements on tiny screens */
+    .pullquote::before, .pullquote::after,
+    .zee-quote::before, .zee-quote::after {
+      font-size: 6rem;
+    }
+
+    .category-marker { font-size: 3.5rem; }
+
+    .service-card h3, .service-item h3, .specialty-card h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* ============================================
+     LANDSCAPE PHONE — short height
+     ============================================ */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero, .zee-hero { min-height: auto; padding: 6rem 2rem 3rem; }
+  }
+
+  /* ============================================
+     PRINT — clean output
+     ============================================ */
+  @media print {
+    .nav, .sticky-cta, .menu-toggle, .footer { display: none; }
+    body { background: white; color: black; }
+    .hero, .zee-hero, .page-header { padding-top: 1rem; }
+  }
+
+  /* ============================================
+     ACCESSIBILITY — reduced motion
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+
+  /* Final CTA button — attention-grabbing breathing glow */
+  .final-cta .btn-primary {
+    position: relative;
+    animation: ctaBreathe 3s ease-in-out infinite;
+  }
+
+  .final-cta .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    animation: ctaPulse 3s ease-out infinite;
+    pointer-events: none;
+  }
+
+  .final-cta .btn-primary:hover {
+    animation-play-state: paused;
+  }
+
+  .final-cta .btn-primary:hover::before {
+    animation-play-state: paused;
+  }
+
+  @keyframes ctaBreathe {
+    0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    50% { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  }
+
+  @keyframes ctaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+    70% { box-shadow: 0 0 0 18px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+  }
+
+  /* Pause animation when out of view to save resources */
+  @media (prefers-reduced-motion: reduce) {
+    .final-cta .btn-primary,
+    .final-cta .btn-primary::before {
+      animation: none !important;
+    }
+  }
+
+
+  /* ============================================
+     ACCESSIBILITY — WCAG 2.1 AA
+     ============================================ */
+
+  /* Skip-to-content link — invisible until focused */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--cream);
+    outline-offset: 2px;
+  }
+
+  /* Visible focus indicators for keyboard users */
+  *:focus { outline: none; }
+  *:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--sage-dark);
+    outline-offset: 3px;
+  }
+  .final-cta a:focus-visible,
+  .final-cta button:focus-visible,
+  .footer a:focus-visible,
+  .zee-purchase a:focus-visible {
+    outline-color: var(--cream);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="zee.html">Where is Zee?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://sarah-bipath.clientsecure.me" class="btn-nav">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Tactically Aligned Speech Know-How's</div>
+      <h1>Compassionate speech therapy for <em>every stage of life.</em></h1>
+      <p class="hero-sub">From toddlers finding their first words to adults reclaiming their voice — Sarah's T.A.S.K. provides personalized, evidence-based care in Central Florida and virtually across FL, NY, CA, NC, MO, and VA.</p>
+      <div class="hero-ctas">
+        <a href="https://sarah-bipath.clientsecure.me" class="btn-primary">
+          Book a Free 15-Min Consultation
+          <span style="font-size: 1.1rem;">→</span>
+        </a>
+        <a href="services.html" class="btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-call">
+        Or call us directly: <a href="tel:4074503418">407-450-3418</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-image">
+        <img src="images/sarah-hero.jpg" alt="Sarah Bipath, Speech-Language Pathologist, working with a young child during a speech therapy session" loading="lazy">
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">Our Promise</div>
+        <div class="hero-badge-text">"Compassion in our hearts, you in our minds."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">ASHA Certified</div>
+    <div class="trust-item">PROMPT Trained</div>
+    <div class="trust-item">Certified Breastfeeding Specialist</div>
+    <div class="trust-item">Step Up For Students Approved</div>
+    <div class="trust-item">FL · NY · CA · NC · MO · VA</div>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Who We Help</div>
+      <h2>Tailored care for <em>every voice.</em></h2>
+      <p>Whatever stage of life you're in, we design every session around your goals — combining clinical expertise with genuine warmth.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-number">01</div>
+        <div>
+          <h3>Pediatric Services</h3>
+          <p>Help your child build the communication skills they need to thrive — at home, in school, and with friends. We treat language delays, articulation, social communication, and more.</p>
+          <ul class="service-list">
+            <li>Language Delays (Late Language Emergence)</li>
+            <li>Speech Sound Disorders (Articulation & Phonology)</li>
+            <li>Social Communication Skills</li>
+          </ul>
+          <a href="services.html#pediatric" class="service-link">See Pediatric Services →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3>Adult Services</h3>
+        <p>Whether you're recovering from a stroke, working on accent reduction, or managing a voice disorder, we'll meet you where you are.</p>
+        <ul class="service-list">
+          <li>Cognitive Communication Disorders</li>
+          <li>Voice Disorders</li>
+          <li>Accent Reduction</li>
+        </ul>
+        <a href="services.html#adult" class="service-link">See Adult Services →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3>Orofacial Myofunctional Therapy</h3>
+        <p>Address the root causes of persistent speech, feeding, and breathing challenges through targeted exercises and behavioral support.</p>
+        <a href="services.html#omt" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <h3>Craniosacral Fascial Therapy</h3>
+        <p>The Gillespie Approach gently unwinds accumulated fascial strain, allowing optimal mobility and improved nervous system regulation.</p>
+        <a href="services.html#cft" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <h3>Lactation Services</h3>
+        <p>Achieve breastfeeding goals throughout your lactation journey with expert support on positioning, milk expression, and feeding duration.</p>
+        <a href="services.html#lactation" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEET SARAH ===== -->
+<section class="section sarah">
+  <div class="section-inner">
+    <div class="sarah-inner">
+      <div class="sarah-image">
+        <img src="images/sarah-portrait.jpg" alt="Sarah Bipath, Speech-Language Pathologist" loading="lazy">
+      </div>
+      <div class="sarah-content">
+        <div class="section-eyebrow">Meet Your Therapist</div>
+        <h2>Sarah Bipath</h2>
+        <p class="sarah-credentials">M.S., CCC-SLP, CBS — Founder & Speech-Language Pathologist</p>
+        <p class="sarah-bio">Sarah is a board-certified speech-language pathologist with years of experience helping clients of all ages — from infants to seniors — find their voice. Originally from New York City and now based in Central Florida, she brings expertise across schools, hospitals, early intervention, and private practice.</p>
+        <p class="sarah-bio">Her approach is deeply personal: every client is treated as a whole person, not a diagnosis, with care tailored to their unique goals and lifestyle.</p>
+        <div class="sarah-certs">
+          <span class="cert-tag">ASHA Certified</span>
+          <span class="cert-tag">PROMPT Trained</span>
+          <span class="cert-tag">Certified Breastfeeding Specialist</span>
+          <span class="cert-tag">Craniosacral Fascial Therapist</span>
+          <span class="cert-tag">Orofacial Myologist</span>
+        </div>
+        <a href="about.html" class="btn-secondary">More About Sarah →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Common Questions</div>
+      <h2>Answers to <em>get you started.</em></h2>
+      <p>Wondering if Sarah's T.A.S.K. is right for you? Here are the questions we hear most often — and you'll find dozens more on our full FAQ page.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+          What happens in a free consultation?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+          <p>We'll spend 15 minutes learning about your goals, answering your questions, and helping you decide if Sarah's T.A.S.K. is the right fit. No pressure, no commitment — just a friendly conversation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+          Do you accept insurance?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+          <p>We are a private-pay practice but provide superbills you can submit to your insurance for potential out-of-network reimbursement. We're also approved through the Step Up For Students scholarship program.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+          What ages do you treat?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+          <p>Everyone — from infants needing feeding support to adults and seniors. Sarah has experience working across the full lifespan, from early intervention through geriatric care.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-more">
+      <a href="faq.html" class="faq-more-link">
+        See all 31 questions
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="section-eyebrow">Let's Get Started</div>
+    <h2>Your story is waiting <em>to be told.</em></h2>
+    <p>If you're ready to improve your or a loved one's communication and confidence through carefully tailored speech therapy, your free consultation is one click away.</p>
+    <a href="https://sarah-bipath.clientsecure.me" class="btn-primary">
+      Book Your Free Consultation
+      <span style="font-size: 1.1rem;">→</span>
+    </a>
+    <p class="final-cta-note">Currently offering virtual services to clients in FL, NY, CA, NC, MO, and VA, and in-person services in Saint Cloud, Maitland, and surrounding Central Florida areas.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Sarah's T.A.S.K.</a>
+      <p>Tactically Aligned Speech Know-How's. A private practice in Central Florida providing tailored speech therapy services with compassion at the center.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li><li><a href="zee.html">Where is Zee?</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4074503418">407-450-3418</a></li>
+        <li><a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a></li>
+        <li>Saint Cloud & Maitland, FL</li>
+        <li>Virtual: FL · NY · CA · NC · MO · VA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Sarah's T.A.S.K. All rights reserved.</div>
+    <div>Compassion in our hearts, you in our minds.</div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="https://sarah-bipath.clientsecure.me">Book Free Consultation →</a>
+</div>
+
+<script>
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('is-active', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        const btn = i.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 2px 20px rgba(92, 79, 68, 0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

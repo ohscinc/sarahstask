@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.sarahstask.com/sitemap.xml
+
+# AI training and assistant context — see /llms.txt
