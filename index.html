@@ -801,7 +801,7 @@
     z-index: 1;
   }
 
-  .final-cta .section-eyebrow { color: rgba(255,255,255,0.7); }
+  .final-cta .section-eyebrow { color: rgba(255,255,255,0.95); }
 
   .final-cta h2 {
     color: var(--warm-white);
@@ -811,11 +811,11 @@
 
   .final-cta h2 em {
     font-style: italic;
-    color: rgba(255,255,255,0.85);
+    color: var(--warm-white);
   }
 
   .final-cta p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.95);
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
     line-height: 1.7;
@@ -1441,7 +1441,6 @@
   }
 
   /* Visible focus indicators for keyboard users */
-  *:focus { outline: none; }
   *:focus-visible {
     outline: 3px solid var(--sage-dark);
     outline-offset: 3px;
@@ -1472,17 +1471,20 @@
 </style>
 </head>
 <body>
+<header>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -1492,6 +1494,7 @@
     </ul>
   </div>
 </nav>
+</header>
 
 <main id="main-content">
 
@@ -1547,7 +1550,7 @@
 
     <div class="services-grid">
       <div class="service-card featured">
-        <div class="service-number">01</div>
+        <div class="service-number" aria-hidden="true">01</div>
         <div>
           <h3>Pediatric Services</h3>
           <p>Help your child build the communication skills they need to thrive — at home, in school, and with friends. We treat language delays, articulation, social communication, and more.</p>
@@ -1561,7 +1564,7 @@
       </div>
 
       <div class="service-card">
-        <div class="service-number">02</div>
+        <div class="service-number" aria-hidden="true">02</div>
         <h3>Adult Services</h3>
         <p>Whether you're recovering from a stroke, working on accent reduction, or managing a voice disorder, we'll meet you where you are.</p>
         <ul class="service-list">
@@ -1573,24 +1576,24 @@
       </div>
 
       <div class="service-card">
-        <div class="service-number">03</div>
+        <div class="service-number" aria-hidden="true">03</div>
         <h3>Orofacial Myofunctional Therapy</h3>
         <p>Address the root causes of persistent speech, feeding, and breathing challenges through targeted exercises and behavioral support.</p>
-        <a href="services.html#omt" class="service-link">Learn More →</a>
+        <a href="services.html#omt" class="service-link" aria-label="Learn more about Orofacial Myofunctional Therapy">Learn More →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-number">04</div>
+        <div class="service-number" aria-hidden="true">04</div>
         <h3>Craniosacral Fascial Therapy</h3>
         <p>The Gillespie Approach gently unwinds accumulated fascial strain, allowing optimal mobility and improved nervous system regulation.</p>
-        <a href="services.html#cft" class="service-link">Learn More →</a>
+        <a href="services.html#cft" class="service-link" aria-label="Learn more about Craniosacral Fascial Therapy">Learn More →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-number">05</div>
+        <div class="service-number" aria-hidden="true">05</div>
         <h3>Lactation Services</h3>
         <p>Achieve breastfeeding goals throughout your lactation journey with expert support on positioning, milk expression, and feeding duration.</p>
-        <a href="services.html#lactation" class="service-link">Learn More →</a>
+        <a href="services.html#lactation" class="service-link" aria-label="Learn more about Lactation Services">Learn More →</a>
       </div>
     </div>
   </div>
@@ -1633,7 +1636,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
           What happens in a free consultation?
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
@@ -1643,7 +1646,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
           Do you accept insurance?
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
@@ -1653,7 +1656,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
           What ages do you treat?
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>

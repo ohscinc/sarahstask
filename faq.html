@@ -99,7 +99,6 @@
   .skip-link:focus { top: 0; outline: 3px solid var(--cream); outline-offset: 2px; }
 
   /* Focus styles */
-  *:focus { outline: none; }
   *:focus-visible {
     outline: 3px solid var(--sage-dark);
     outline-offset: 3px;
@@ -468,16 +467,19 @@
 </style>
 </head>
 <body>
+<header>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- ===== NAV ===== -->
-<nav class="nav" aria-label="Primary">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -488,6 +490,7 @@
     </ul>
   </div>
 </nav>
+</header>
 
 <main id="main-content">
 
@@ -524,7 +527,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What does a free consultation include?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What does a free consultation include?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>A 15-minute conversation to learn about your goals, answer your questions, and decide together whether Sarah's T.A.S.K. is the right fit. There's no commitment, no clinical evaluation, and no pressure — just a friendly conversation.</p>
           <p>Most consultations cover: who the care is for, what concerns brought you here, your timeline, your insurance situation, and a quick overview of what working together would look like.</p>
@@ -532,14 +535,14 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How do I book an appointment?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How do I book an appointment?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>The fastest way is through our secure online booking system at <a href="https://sarah-bipath.clientsecure.me" target="_blank" rel="noopener">sarah-bipath.clientsecure.me</a>. You can also call us at <a href="tel:4074503418">407-450-3418</a> or email <a href="mailto:admin@sarahstask.com">admin@sarahstask.com</a>.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What happens after the consultation?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What happens after the consultation?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>If we agree that Sarah's T.A.S.K. is a good fit, we'll schedule a comprehensive evaluation. The evaluation lets us understand the client's strengths and challenges in detail and informs a personalized treatment plan.</p>
           <p>From there, we set up a regular session schedule that works for your life — weekly is most common, but cadence is always tailored to the individual.</p>
@@ -547,14 +550,14 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Do I need a referral from a doctor?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Do I need a referral from a doctor?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>No — you can self-refer to our practice without a physician's referral. If you're hoping to seek insurance reimbursement, however, your insurance company may require a referral. We recommend checking with them directly.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How long until we see results?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How long until we see results?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Progress varies widely based on the goal, the client's age, the consistency of practice between sessions, and the underlying nature of the challenge. Some clients see meaningful change in 6–8 weeks; others work on goals over months or longer.</p>
           <p>What we can promise: clear, measurable goals from day one, regular progress monitoring, and honest conversation about how things are going. Speech therapy is a partnership, not a quick fix.</p>
@@ -575,7 +578,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Do you accept insurance?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Do you accept insurance?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>We are a private-pay practice, meaning payment is collected at the time of service. However, we provide superbills you can submit to your insurance provider for potential out-of-network reimbursement.</p>
           <p>We're also approved through the <strong>Step Up For Students</strong> scholarship program, which can fully cover services for eligible Florida families.</p>
@@ -583,7 +586,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is a superbill?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is a superbill?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>A superbill is an itemized receipt with the diagnosis codes, procedure codes, and provider information your insurance needs to consider reimbursement. After each session, we provide one electronically — you submit it to your insurance, and they pay you directly for any covered amount.</p>
           <p>Reimbursement amounts vary widely based on your specific plan and out-of-network benefits. We recommend calling your insurance to ask about "out-of-network speech therapy benefits" before starting.</p>
@@ -591,7 +594,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is Step Up For Students?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is Step Up For Students?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Step Up For Students is a Florida scholarship program that helps eligible families pay for educational services, including speech therapy. We're an approved provider, which means qualifying Florida families can use scholarship funds to cover sessions.</p>
           <p>Eligibility, application, and approval all happen through Step Up For Students directly. Visit <a href="https://stepupforstudents.org" target="_blank" rel="noopener">stepupforstudents.org</a> to learn more.</p>
@@ -599,14 +602,14 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How much does a session cost?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How much does a session cost?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Session pricing varies based on the type of service (evaluation, treatment, specialty service), session length, and whether it's in-person or virtual. We discuss specific pricing during your free consultation so you can make an informed decision.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is your cancellation policy?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is your cancellation policy?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>We ask for at least 24 hours' notice for cancellations or reschedules so we can offer the slot to another family. Late cancellations and no-shows may be subject to a fee — full details are provided in your intake paperwork.</p>
         </div>
@@ -626,21 +629,21 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How long are sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How long are sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Most sessions are 30–60 minutes, depending on the client's age, attention span, and treatment plan. Younger children often start with 30-minute sessions; adults and older children typically do 45–60 minutes. We'll discuss the right length for you during your consultation.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How often will we meet?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How often will we meet?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Weekly is the most common cadence and provides the best continuity for skill-building. Some clients meet twice weekly for accelerated progress; others meet every other week for maintenance. Your treatment plan determines what's right.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Can parents or family members attend?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Can parents or family members attend?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Yes — and we strongly encourage it for pediatric clients. Parental involvement is one of the biggest predictors of long-term progress in speech therapy. We'll teach you the strategies and exercises so you can support your child between sessions.</p>
           <p>For adult clients, we welcome a spouse, partner, adult child, or caregiver to be involved if it would help with practice and carryover at home.</p>
@@ -648,7 +651,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What should I bring to a session?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What should I bring to a session?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>For in-person sessions: yourself, any glasses or hearing aids you normally wear, and any specific items we've requested ahead of time (favorite toys for pediatric clients, recent medical reports, communication devices, etc.).</p>
           <p>For virtual sessions: a quiet space, a charged device with a working camera and microphone, and a stable internet connection. We'll let you know ahead of time if we need any specific materials.</p>
@@ -656,7 +659,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How do you track progress?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How do you track progress?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>We collect data during sessions (accuracy on target sounds, words used spontaneously, comprehension of complex directions, etc.) and review it regularly. You'll get progress updates that show measurable change over time.</p>
           <p>For longer-term clients, we conduct formal progress reviews every 3–6 months and adjust the treatment plan as needed.</p>
@@ -677,7 +680,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Should I be worried that my toddler isn't talking yet?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Should I be worried that my toddler isn't talking yet?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Every child develops on their own timeline, but there are general milestones worth knowing. By 12 months, most babies say a word or two. By 18 months, many can say 10–20 words. By 24 months, vocabulary explodes and two-word phrases appear ("more milk," "go car").</p>
           <p>If your child seems significantly behind these milestones — or you're just not sure — book a free consultation. Early support is one of the most effective tools in speech therapy.</p>
@@ -685,14 +688,14 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">My child has trouble being understood. Is that normal?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">My child has trouble being understood. Is that normal?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Children gradually become more understandable as they grow. Strangers should typically understand 50% of what a 2-year-old says, 75% of a 3-year-old, and nearly all of a 4-year-old. If your child is significantly less intelligible than expected for their age, an evaluation is a good idea.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What's the difference between articulation and language?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What's the difference between articulation and language?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p><strong>Articulation</strong> is how clearly speech sounds are produced — it's about the motor skills of speaking. A child who says "wabbit" for "rabbit" has an articulation challenge.</p>
           <p><strong>Language</strong> is the system of vocabulary, grammar, and meaning. A child who understands directions but struggles to put words into sentences may have a language challenge. Many children have one without the other; some have both.</p>
@@ -700,7 +703,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Will my child miss school for sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Will my child miss school for sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Not unless you choose a daytime in-person slot. We offer after-school and evening times specifically because many families don't want school disruption. Virtual sessions also make it easy to fit therapy around school schedules.</p>
         </div>
@@ -720,7 +723,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Can therapy help after a stroke?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Can therapy help after a stroke?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Yes — and the evidence is strong. Speech-language pathologists are essential partners in stroke recovery, working on aphasia (language loss), apraxia (motor speech difficulty), cognitive-communication challenges (memory, attention, problem-solving), and swallowing.</p>
           <p>Recovery is often faster in the first months but meaningful gains can continue for years. It's never too late to start.</p>
@@ -728,7 +731,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">My voice gets tired or hoarse. Can you help?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">My voice gets tired or hoarse. Can you help?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Often yes. Voice fatigue, hoarseness, vocal strain, and reduced loudness can all be addressed through voice therapy — especially for professionals who use their voice heavily (teachers, public speakers, performers, attorneys).</p>
           <p>If your voice changes have been going on for more than 2–3 weeks, we recommend seeing an ENT first to rule out any underlying medical issue. From there, we can build a voice therapy plan together.</p>
@@ -736,7 +739,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is accent reduction therapy?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is accent reduction therapy?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Accent reduction (sometimes called accent modification) is voluntary work to soften or modify how someone pronounces certain sounds, rhythms, or stress patterns — typically for clearer professional or personal communication. There's no "right" or "wrong" accent. The goal is whatever the client wants for themselves.</p>
           <p>It's a positive, skill-building service: we work on specific sounds, intonation patterns, and clarity, while honoring the client's identity and choice.</p>
@@ -744,7 +747,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Is this covered by Medicare?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Is this covered by Medicare?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Medicare may cover speech-language pathology services that are medically necessary, but we are a private-pay practice and don't bill Medicare directly. Some clients use their Medicare benefits at other providers and work with us in addition for non-covered services like accent reduction or wellness-focused voice work.</p>
         </div>
@@ -764,7 +767,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is Orofacial Myofunctional Therapy (OMT)?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is Orofacial Myofunctional Therapy (OMT)?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>OMT addresses the underlying muscle patterns and behaviors of the face, mouth, and tongue. It's used to help with persistent speech sound errors, tongue thrust, mouth breathing, feeding challenges, and the muscle changes that often accompany tongue and lip ties.</p>
           <p>Treatment involves targeted exercises and behavioral coaching. It can be a game-changer when traditional therapy alone hasn't fully resolved a challenge.</p>
@@ -772,14 +775,14 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">My child has a tongue tie. Can OMT help?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">My child has a tongue tie. Can OMT help?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Often yes. OMT is frequently used both before and after a frenectomy (tongue tie release) to prepare the muscles, support healing, and rebuild proper movement patterns. We also work alongside ENTs, dentists, and lactation specialists as part of a coordinated care team.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What is Craniosacral Fascial Therapy (CFT)?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What is Craniosacral Fascial Therapy (CFT)?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>CFT is a gentle hands-on technique developed by Dr. Barry Gillespie that releases accumulated strain in the fascial tissue surrounding the brain and spinal cord. The aim is to support optimal mobility and nervous system regulation, which can improve responsiveness to other therapies.</p>
           <p>It's used as a complement to traditional speech therapy, not a replacement for it.</p>
@@ -787,7 +790,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What kind of lactation support do you offer?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What kind of lactation support do you offer?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>As a Certified Breastfeeding Specialist, Sarah supports families with positioning, latch, milk transfer, feeding duration, milk expression, and the oral-motor side of breastfeeding (especially when tongue ties or oral function are involved).</p>
           <p>Lactation support pairs naturally with our pediatric feeding services for infants who need both kinds of help.</p>
@@ -808,14 +811,14 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">How do virtual sessions work?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">How do virtual sessions work?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>We use a secure, HIPAA-compliant video platform. Before your session, you'll receive a link by email — click it to join. Sessions can be done from any device with a camera and stable internet: laptop, tablet, or phone.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Where do you offer virtual sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Where do you offer virtual sessions?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>Sarah is licensed in six states for virtual practice:</p>
           <ul>
@@ -831,7 +834,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">Are virtual sessions as effective as in-person?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">Are virtual sessions as effective as in-person?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>For many goals, research shows telehealth speech therapy is just as effective as in-person care. It's particularly well-suited for older children, teens, and adults who can engage with screen-based activities.</p>
           <p>For very young children or for hands-on work like CFT, in-person is preferred. We'll advise on the best format during your consultation.</p>
@@ -839,7 +842,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">What if my child can't sit still for a screen session?<span class="faq-icon" aria-hidden="true">+</span></button>
+        <button class="faq-question" type="button" aria-expanded="false">What if my child can't sit still for a screen session?<span class="faq-icon" aria-hidden="true">+</span></button>
         <div class="faq-answer" role="region">
           <p>That's a really common concern. We have lots of strategies that work for younger or wigglier children — movement breaks, parent-coached play, hands-on activities away from the screen with parent guidance, and shorter session lengths.</p>
           <p>Sometimes children surprise their parents and engage beautifully online. Other times, in-person is genuinely the better fit. We'll figure it out together.</p>

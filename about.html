@@ -607,7 +607,7 @@
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.95);
     margin-bottom: 1rem;
   }
 
@@ -619,11 +619,11 @@
 
   .final-cta h2 em {
     font-style: italic;
-    color: rgba(255,255,255,0.85);
+    color: var(--warm-white);
   }
 
   .final-cta p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.95);
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
     line-height: 1.7;
@@ -1226,7 +1226,6 @@
   }
 
   /* Visible focus indicators for keyboard users */
-  *:focus { outline: none; }
   *:focus-visible {
     outline: 3px solid var(--sage-dark);
     outline-offset: 3px;
@@ -1257,17 +1256,20 @@
 </style>
 </head>
 <body>
+<header>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="logo">Sarah's <span>T.A.S.K.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active" aria-current="page">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -1277,6 +1279,7 @@
     </ul>
   </div>
 </nav>
+</header>
 
 <main id="main-content">
 
