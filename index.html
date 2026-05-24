@@ -413,6 +413,97 @@
 
   .trust-item:first-child::before { display: none; }
 
+  /* ===== TRUST CAROUSEL ===== */
+  .trust-carousel-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .trust-carousel-track-container {
+    flex: 1;
+    position: relative;
+    min-height: 1.75rem;
+    overflow: hidden;
+  }
+
+  .trust-carousel-track {
+    position: relative;
+    height: 100%;
+    min-height: 1.75rem;
+  }
+
+  .trust-carousel-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .trust-carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .trust-carousel-item {
+    text-align: center;
+  }
+
+  .trust-carousel-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--taupe-dark);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .trust-carousel-btn:hover {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    border-color: var(--sage-dark);
+  }
+
+  .trust-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .trust-carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--line);
+    cursor: pointer;
+    transition: background 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  }
+
+  .trust-carousel-dot:hover { background: var(--sage); }
+
+  .trust-carousel-dot.active {
+    background: var(--sage-dark);
+    width: 24px;
+    border-radius: 4px;
+  }
+
   /* ===== SECTIONS ===== */
   .section {
     padding: 7rem 2.5rem;
@@ -1527,12 +1618,35 @@
 
 <!-- ===== TRUST STRIP ===== -->
 <div class="trust">
-  <div class="trust-inner">
-    <div class="trust-item">ASHA Certified</div>
-    <div class="trust-item">PROMPT Trained</div>
-    <div class="trust-item">Certified Breastfeeding Specialist</div>
-    <div class="trust-item">Step Up For Students Approved</div>
-    <div class="trust-item">FL · NY · CA · NC · MO · VA</div>
+  <div class="trust-carousel-wrapper">
+    <button class="trust-carousel-btn trust-carousel-prev" type="button" aria-label="Previous">&#8249;</button>
+    <div class="trust-carousel-track-container">
+      <div class="trust-carousel-track">
+        <div class="trust-carousel-slide active" data-index="0">
+          <div class="trust-item trust-carousel-item">ASHA Certified</div>
+        </div>
+        <div class="trust-carousel-slide" data-index="1">
+          <div class="trust-item trust-carousel-item">PROMPT Trained</div>
+        </div>
+        <div class="trust-carousel-slide" data-index="2">
+          <div class="trust-item trust-carousel-item">Certified Breastfeeding Specialist</div>
+        </div>
+        <div class="trust-carousel-slide" data-index="3">
+          <div class="trust-item trust-carousel-item">Step Up For Students Approved</div>
+        </div>
+        <div class="trust-carousel-slide" data-index="4">
+          <div class="trust-item trust-carousel-item">FL · NY · CA · NC · MO · VA</div>
+        </div>
+      </div>
+    </div>
+    <button class="trust-carousel-btn trust-carousel-next" type="button" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="trust-carousel-dots">
+    <button class="trust-carousel-dot active" type="button" data-dot="0" aria-label="Go to slide 1"></button>
+    <button class="trust-carousel-dot" type="button" data-dot="1" aria-label="Go to slide 2"></button>
+    <button class="trust-carousel-dot" type="button" data-dot="2" aria-label="Go to slide 3"></button>
+    <button class="trust-carousel-dot" type="button" data-dot="3" aria-label="Go to slide 4"></button>
+    <button class="trust-carousel-dot" type="button" data-dot="4" aria-label="Go to slide 5"></button>
   </div>
 </div>
 
@@ -1772,6 +1886,49 @@
       nav.style.boxShadow = 'none';
     }
   });
+
+  // Trust carousel
+  (() => {
+    const slides = document.querySelectorAll('.trust-carousel-slide');
+    const dots = document.querySelectorAll('.trust-carousel-dot');
+    const prevBtn = document.querySelector('.trust-carousel-prev');
+    const nextBtn = document.querySelector('.trust-carousel-next');
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer;
+
+    const goTo = (i) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+    };
+
+    const start = () => {
+      stop();
+      timer = setInterval(() => goTo(current + 1), 5000);
+    };
+    const stop = () => { if (timer) clearInterval(timer); };
+
+    prevBtn?.addEventListener('click', () => { goTo(current - 1); start(); });
+    nextBtn?.addEventListener('click', () => { goTo(current + 1); start(); });
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        goTo(parseInt(dot.dataset.dot, 10));
+        start();
+      });
+    });
+
+    const wrapper = document.querySelector('.trust');
+    wrapper?.addEventListener('mouseenter', stop);
+    wrapper?.addEventListener('mouseleave', start);
+    wrapper?.addEventListener('focusin', stop);
+    wrapper?.addEventListener('focusout', start);
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      start();
+    }
+  })();
 </script>
 
 </body>
