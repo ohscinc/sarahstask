@@ -414,11 +414,27 @@
     padding: 0 2.5rem;
   }
 
+  /* ✦ decorators no longer needed — ticker now displays badge images
   .trust-ticker-item::before {
     content: "✦";
     color: var(--sage-dark);
     font-size: 0.7rem;
     flex-shrink: 0;
+  }
+  */
+
+  .trust-ticker-badge {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    padding: 0 2.5rem;
+    flex-shrink: 0;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+
+  .trust-ticker-track:hover .trust-ticker-badge {
+    opacity: 1;
   }
 
   @keyframes trust-scroll {
@@ -1806,16 +1822,17 @@
 <div class="trust">
   <div class="trust-ticker-track" aria-label="Credentials ticker">
     <div class="trust-ticker-inner">
-      <span class="trust-ticker-item">ASHA Certified</span>
-      <span class="trust-ticker-item">PROMPT Trained</span>
-      <span class="trust-ticker-item">Certified Breastfeeding Specialist</span>
-      <span class="trust-ticker-item">Step Up For Students Approved</span>
-      <span class="trust-ticker-item">FL · NY · CA · NC · MO · VA</span>
-      <span class="trust-ticker-item">ASHA Certified</span>
-      <span class="trust-ticker-item">PROMPT Trained</span>
-      <span class="trust-ticker-item">Certified Breastfeeding Specialist</span>
-      <span class="trust-ticker-item">Step Up For Students Approved</span>
-      <span class="trust-ticker-item">FL · NY · CA · NC · MO · VA</span>
+      <img src="images/badges/ashacert%201.png" alt="ASHA Certified — Certificate of Clinical Competence in Speech-Language Pathology" class="trust-ticker-badge">
+      <img src="images/badges/promptcert%201.png" alt="PROMPT Trained certification" class="trust-ticker-badge">
+      <img src="images/badges/Certified+Breastfeeding+Specialist%201.png" alt="Certified Breastfeeding Specialist" class="trust-ticker-badge">
+      <img src="images/badges/TOTS+Training+Final+Logo+TM%201.png" alt="TOTS — Tethered Oral Tissues Training" class="trust-ticker-badge">
+      <img src="images/badges/ashaaward%201.png" alt="ASHA ACE Award — Award for Continuing Education" class="trust-ticker-badge">
+      <!-- duplicate of the above 5 for seamless loop -->
+      <img src="images/badges/ashacert%201.png" alt="" aria-hidden="true" class="trust-ticker-badge">
+      <img src="images/badges/promptcert%201.png" alt="" aria-hidden="true" class="trust-ticker-badge">
+      <img src="images/badges/Certified+Breastfeeding+Specialist%201.png" alt="" aria-hidden="true" class="trust-ticker-badge">
+      <img src="images/badges/TOTS+Training+Final+Logo+TM%201.png" alt="" aria-hidden="true" class="trust-ticker-badge">
+      <img src="images/badges/ashaaward%201.png" alt="" aria-hidden="true" class="trust-ticker-badge">
     </div>
   </div>
 </div>
