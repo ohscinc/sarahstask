@@ -1484,6 +1484,198 @@
     border: 0;
   }
 
+  /* ============================================
+     HIGHLIGHTS SECTION — Virtual & Step Up
+     Two-pillar callout between hero and trust ticker
+     ============================================ */
+  .highlights {
+    padding: 5rem 2.5rem;
+    background: var(--cream-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .highlights::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(138, 120, 104, 0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .highlights-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .highlights-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .highlights-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 1rem;
+  }
+  .highlights-eyebrow::before,
+  .highlights-eyebrow::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--sage-dark);
+  }
+  .highlights h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--taupe-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .highlights h2 em {
+    font-style: italic;
+    color: var(--sage-dark);
+    font-weight: 400;
+  }
+  .highlights-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .highlight-card {
+    background: var(--warm-white);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--sage-dark);
+    border-radius: 4px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .highlight-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .highlight-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(122, 139, 117, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-dark);
+    flex-shrink: 0;
+  }
+  .highlight-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .highlight-card-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 600;
+  }
+  .highlight-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--taupe-dark);
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .highlight-card p {
+    font-size: 0.98rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+  .highlight-states {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .highlight-pill {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+    background: rgba(122, 139, 117, 0.12);
+    color: var(--sage-dark);
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .highlight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+    background: rgba(200, 145, 122, 0.15);
+    color: #a06a51;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  .highlight-tag svg {
+    width: 14px;
+    height: 14px;
+  }
+  .highlight-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(93, 110, 88, 0.2);
+  }
+  .highlight-btn:hover {
+    background: var(--taupe-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(93, 110, 88, 0.3);
+  }
+  @media (max-width: 768px) {
+    .highlights { padding: 4rem 1.25rem; }
+    .highlights-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .highlight-card { padding: 2rem 1.5rem; }
+    .highlight-btn { width: 100%; justify-content: center; }
+  }
+
 </style>
 </head>
 <body>
@@ -1538,6 +1730,74 @@
         <div class="hero-badge-label">Our Promise</div>
         <div class="hero-badge-text">"Compassion in our hearts, you in our minds."</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HIGHLIGHTS — Virtual & Step Up ===== -->
+<section class="highlights" aria-labelledby="highlights-heading">
+  <div class="highlights-inner">
+    <div class="highlights-header">
+      <div class="highlights-eyebrow">How we serve you</div>
+      <h2 id="highlights-heading">Care that meets you <em>where you are.</em></h2>
+      <p class="highlights-sub">Flexible access for families across state lines — and across budgets.</p>
+    </div>
+
+    <div class="highlights-grid">
+
+      <!-- Virtual / Telehealth -->
+      <article class="highlight-card">
+        <div class="highlight-icon-row">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="12" rx="1"></rect>
+              <line x1="2" y1="20" x2="22" y2="20"></line>
+            </svg>
+          </div>
+          <div class="highlight-card-eyebrow">Virtual / Telehealth</div>
+        </div>
+        <h3>Skip the drive — Sarah comes to your living room.</h3>
+        <p>HIPAA-compliant video sessions from any device with a camera. Available throughout Florida and in five additional licensed states.</p>
+        <div class="highlight-states" aria-label="Licensed in six states">
+          <span class="highlight-pill">FL</span>
+          <span class="highlight-pill">NY</span>
+          <span class="highlight-pill">CA</span>
+          <span class="highlight-pill">NC</span>
+          <span class="highlight-pill">MO</span>
+          <span class="highlight-pill">VA</span>
+        </div>
+        <a href="https://sarah-bipath.clientsecure.me" class="highlight-btn" aria-label="Book a virtual telehealth visit">
+          Book a virtual visit
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- Step Up For Students -->
+      <article class="highlight-card">
+        <div class="highlight-icon-row">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"></path>
+            </svg>
+          </div>
+          <div class="highlight-card-eyebrow">Homeschool families</div>
+        </div>
+        <h3>Step Up scholarship provider.</h3>
+        <p>Approved through Step Up For Students — eligible Florida homeschool families can use scholarship funds to cover speech therapy with Sarah.</p>
+        <div class="highlight-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+          Approved Florida provider
+        </div>
+        <a href="https://www.stepupforstudents.org/" class="highlight-btn" target="_blank" rel="noopener" aria-label="Learn about Step Up For Students eligibility (opens in new tab)">
+          See if you qualify
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
     </div>
   </div>
 </section>
