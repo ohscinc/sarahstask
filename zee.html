@@ -1057,6 +1057,28 @@
   }
 
   /* ============================================
+     DESKTOP HERO FIT — keep the hero inside the fold
+     .zee-author-photo is aspect-ratio 4/5 capped at 460px
+     wide, so the hero was a fixed ~806px tall on every
+     desktop width and spilled past the fold (clipping the
+     bottom of the photo and its gradient) on any screen
+     shorter than that. Cap the photo against viewport
+     height as well; the cap self-disables once there is
+     room, so the 460px design size is untouched on taller
+     screens. Mirrors the .hero rule in index.html.
+     ============================================ */
+  @media (min-width: 969px) {
+    .zee-hero {
+      padding-top: 7.5rem;
+      padding-bottom: 4.5rem;
+    }
+    .zee-author-photo {
+      max-height: calc(100vh - 13rem);
+      max-width: min(460px, calc((100vh - 13rem) * 0.8));
+    }
+  }
+
+  /* ============================================
      LANDSCAPE PHONE — short height
      ============================================ */
   @media (max-height: 500px) and (orientation: landscape) {

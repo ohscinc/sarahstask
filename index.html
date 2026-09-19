@@ -975,7 +975,11 @@
   /* ===== RESPONSIVE ===== */
   @media (max-width: 968px) {
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-visual { max-width: 420px; margin: 0 auto; }
+    /* width:100% is required — the auto margins cancel the grid item's
+       default stretch, and .hero-visual's only child (.hero-image) is
+       absolutely positioned, so without it the box shrinks to 0 and the
+       photo disappears between 901px and 968px. */
+    .hero-visual { width: 100%; max-width: 420px; margin: 0 auto; }
     .sarah-inner { grid-template-columns: 1fr; gap: 3rem; }
     .sarah-image { max-width: 420px; margin: 0 auto; }
     .services-grid { grid-template-columns: 1fr; }
@@ -1369,6 +1373,29 @@
 
     .service-card h3, .service-item h3, .specialty-card h3 {
       font-size: 1.3rem;
+    }
+  }
+
+  /* ============================================
+     DESKTOP HERO FIT — keep the CTAs above the fold
+     .hero-visual is aspect-ratio 4/5, so its height grows
+     with the column width. On a standard laptop that pushed
+     the hero past 100vh and clipped the CTA row and the
+     phone line beneath it. Cap the visual against viewport
+     height (the cap self-disables on tall screens, so the
+     original proportions are untouched there) and trim the
+     generous vertical padding.
+     ============================================ */
+  @media (min-width: 969px) {
+    .hero {
+      padding-top: 7.5rem;
+      padding-bottom: 4.5rem;
+    }
+    .hero-visual {
+      width: 100%;
+      max-height: calc(100vh - 13rem);
+      max-width: calc((100vh - 13rem) * 0.8);
+      justify-self: end;
     }
   }
 
