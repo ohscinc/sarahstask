@@ -503,6 +503,23 @@
     .ah-credit .ah-credit__mark,
     .ah-credit .ah-credit__text { transition: none; }
   }
+
+  /* ============================================
+     MOBILE FOOTER — centred
+     Stacked into one or two narrow columns, the left-aligned copy left
+     a ragged gutter down the right. Centring it reads as intentional at
+     phone width. Placed last so it outranks the earlier footer rules.
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer-inner,
+    .footer-brand,
+    .footer-col { text-align: center; }
+
+    .footer-brand .logo { display: inline-block; }
+
+    /* The footer lists have no bullets, so centring them is safe. */
+    .footer-col ul { padding-left: 0; }
+  }
 </style>
 </head>
 <body>

@@ -1062,6 +1062,38 @@
     .ah-credit .ah-credit__mark,
     .ah-credit .ah-credit__text { transition: none; }
   }
+
+  /* ============================================
+     MOBILE FOOTER — centred
+     Stacked into one or two narrow columns, the left-aligned copy left
+     a ragged gutter down the right. Centring it reads as intentional at
+     phone width. Placed last so it outranks the earlier footer rules.
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer-inner,
+    .footer-brand,
+    .footer-col { text-align: center; }
+
+    .footer-brand .logo { display: inline-block; }
+
+    /* The footer lists have no bullets, so centring them is safe. */
+    .footer-col ul { padding-left: 0; }
+  }
+
+  /* ============================================
+     MOBILE FOOTER — clearance for the fixed CTA
+     .sticky-cta is position:fixed, so it permanently covers the bottom
+     of the viewport and was sitting on top of the footer's last row.
+     Measured: it occupies up to 74px of the viewport bottom (bar height
+     plus its own bottom offset). One value rather than a per-breakpoint
+     one, because the bar is not the same size on every page — index
+     shrinks it below 480px and faq does not — so this is sized to the
+     largest footprint and clears both. Plus the iOS safe-area inset for
+     the home indicator.
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer { padding-bottom: calc(74px + 1.5rem + env(safe-area-inset-bottom, 0px)); }
+  }
 </style>
 </head>
 <body>
