@@ -5,3 +5,4 @@
 .npm-global/
 .npmrc
 .DS_Store
+.playwright-mcp/
