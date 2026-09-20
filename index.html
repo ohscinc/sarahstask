@@ -551,8 +551,8 @@
 
   /* ---- Front ---- */
   .service-front {
-    justify-content: space-between;
-    gap: 3.5rem;
+    justify-content: center;
+    gap: 1.75rem;
     min-height: 16.5rem;
     background:
       linear-gradient(152deg, var(--cream) 0%, var(--cream-soft) 58%, var(--warm-white) 100%);
@@ -563,16 +563,15 @@
   .service-front::before {
     content: attr(data-number);
     position: absolute;
-    right: -1.25rem;
-    top: 50%;
-    transform: translateY(-48%);
+    right: -0.5rem;
+    bottom: -2.25rem;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 10.5rem;
+    font-size: 9rem;
     line-height: 1;
     color: var(--sage);
-    opacity: 0.075;
+    opacity: 0.08;
     pointer-events: none;
     user-select: none;
   }
@@ -1158,15 +1157,6 @@
     .sarah-inner { grid-template-columns: 1fr; gap: 3rem; }
     .sarah-image { max-width: 420px; margin: 0 auto; }
     .services-grid { grid-template-columns: 1fr; }
-
-    /* Stacked cards are taller and narrower, so the front's top/bottom
-       split opens a dead gap. Gather the numeral and title into one
-       centred block instead. */
-    .service-front {
-      justify-content: center;
-      gap: 1.75rem;
-      min-height: 0;
-    }
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
   }
 
