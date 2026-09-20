@@ -500,6 +500,21 @@
     background: var(--warm-white);
   }
 
+  /* ===== SERVICE FLIP CARDS =====
+     Each card is a 3D flip: front carries the numeral + title, back
+     carries the detail and the link through to the service page.
+
+     Structure notes:
+     - .service-card owns the perspective only; it must never clip or
+       it would flatten the rotation.
+     - .service-card-inner stacks both faces in ONE css-grid cell, so
+       the card self-sizes to the taller face. No fixed heights, which
+       means copy can change without anything being cut off.
+     - visibility (not just backface-visibility) is toggled at the
+       midpoint of the turn so the hidden face leaves the tab order and
+       the accessibility tree — otherwise the back's link stays
+       focusable while invisible.
+     ============================================================ */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -507,42 +522,60 @@
   }
 
   .service-card {
-    background: var(--cream-soft);
-    padding: 2.5rem;
+    perspective: 1600px;
     border-radius: 6px;
-    border: 1px solid var(--line);
-    transition: all 0.4s ease;
+  }
+
+  .service-card-inner {
+    display: grid;
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(0) rotateY(0deg);
+    transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  .service-face {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: visibility 0s linear 0.37s, border-color 0.5s ease, box-shadow 0.5s ease;
   }
 
-  .service-card.featured {
-    grid-column: span 2;
-    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-soft) 100%);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2.5rem;
-    align-items: center;
+  /* ---- Front ---- */
+  .service-front {
+    justify-content: space-between;
+    gap: 3.5rem;
+    min-height: 16.5rem;
+    background:
+      linear-gradient(152deg, var(--cream) 0%, var(--cream-soft) 58%, var(--warm-white) 100%);
   }
 
-  .service-card::after {
-    content: '';
+  /* Oversized ghost numeral bleeding off the corner — the editorial
+     anchor that keeps the sparse front face from reading as empty. */
+  .service-front::before {
+    content: attr(data-number);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--sage-dark);
-    transition: width 0.4s ease;
+    right: -1.25rem;
+    top: 50%;
+    transform: translateY(-48%);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 10.5rem;
+    line-height: 1;
+    color: var(--sage);
+    opacity: 0.075;
+    pointer-events: none;
+    user-select: none;
   }
-
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-    border-color: var(--sage);
-  }
-
-  .service-card:hover::after { width: 100%; }
 
   .service-number {
     font-family: 'Cormorant Garamond', serif;
@@ -550,33 +583,99 @@
     color: var(--sage-dark);
     font-style: italic;
     line-height: 1;
-    margin-bottom: 1rem;
+    position: relative;
   }
 
-  /* The number sits in its own grid row/column on the featured card,
-     so the 1rem grid gap supplies the spacing instead of a margin. */
-  .service-card.featured .service-number {
-    margin-bottom: 0;
+  /* Hairline that draws out from under the numeral on approach. */
+  .service-number::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.85rem;
+    width: 2rem;
+    height: 1px;
+    background: var(--sage);
+    transition: width 0.6s cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  .service-front-foot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: flex-start;
   }
 
   .service-card h3 {
     font-size: 1.6rem;
-    margin-bottom: 1rem;
+    line-height: 1.25;
+    margin-bottom: 0;
   }
 
-  /* The featured card's larger type scale belongs to the wide
-     two-column treatment only. At <=900px it stacks and renders
-     identically to the other cards, so card 01 must drop back to the
-     shared scale — otherwise it reads as oversized next to 02. */
-  @media (min-width: 901px) {
-    .service-card.featured .service-number {
-      font-size: 4rem;
-    }
+  /* The cue is the real control; its ::after stretches the hit area
+     across the whole front face so a tap anywhere turns the card. */
+  .service-flip {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
 
-    .service-card.featured h3 {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
+  .service-flip::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+  }
+
+  .service-flip:focus-visible {
+    outline: none;
+  }
+
+  .service-flip:focus-visible::after {
+    outline: 2px solid var(--sage-dark);
+    outline-offset: 3px;
+  }
+
+  .service-cue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    transition: gap 0.4s ease, color 0.4s ease;
+  }
+
+  .service-cue svg {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  /* ---- Back ---- */
+  .service-back {
+    transform: rotateY(180deg);
+    visibility: hidden;
+    justify-content: flex-start;
+    background:
+      radial-gradient(ellipse at 88% 4%, rgba(122, 139, 117, 0.09), transparent 62%),
+      var(--warm-white);
+  }
+
+  .service-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--sage-dark);
+    line-height: 1;
+    margin-bottom: 1.1rem;
+    padding-right: 2.5rem;
   }
 
   .service-card p {
@@ -610,17 +709,82 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    margin-top: auto;
+    align-self: flex-start;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--sage-dark);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    transition: gap 0.3s ease, color 0.3s ease;
   }
 
   .service-link:hover {
     gap: 0.85rem;
     color: var(--taupe-dark);
   }
+
+  /* Turn-back control. Redundant for mouse users (moving away turns
+     the card) but it is the only way back for touch and keyboard. */
+  .service-unflip {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.15rem;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--cream-soft);
+    color: var(--taupe);
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.5s ease;
+  }
+
+  .service-unflip svg { width: 13px; height: 13px; }
+
+  .service-unflip:hover {
+    color: var(--sage-dark);
+    border-color: var(--sage);
+    transform: rotate(-45deg);
+  }
+
+  .service-unflip:focus-visible {
+    outline: 2px solid var(--sage-dark);
+    outline-offset: 2px;
+  }
+
+  /* ---- Turned state ----
+     Driven by hover on fine pointers, and by .is-flipped (button, tap
+     or keyboard) everywhere. Both paths set the same three properties. */
+  .service-card.is-flipped .service-card-inner {
+    transform: translateY(-4px) rotateY(180deg);
+  }
+  .service-card.is-flipped .service-back { visibility: visible; }
+  .service-card.is-flipped .service-front { visibility: hidden; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .service-card:hover .service-card-inner {
+      transform: translateY(-4px) rotateY(180deg);
+    }
+    .service-card:hover .service-back { visibility: visible; }
+    .service-card:hover .service-front { visibility: hidden; }
+
+    .service-card:hover .service-face {
+      border-color: var(--sage);
+      box-shadow: var(--shadow);
+    }
+    .service-card:hover .service-number::after { width: 4.25rem; }
+    .service-card:hover .service-cue { gap: 0.9rem; }
+    .service-card:hover .service-cue svg { transform: rotate(180deg); }
+  }
+
+  .service-card.is-flipped .service-face {
+    border-color: var(--sage);
+    box-shadow: var(--shadow);
+  }
+  .service-card.is-flipped .service-cue svg { transform: rotate(180deg); }
 
   /* ===== MEET SARAH ===== */
   .sarah {
@@ -994,7 +1158,15 @@
     .sarah-inner { grid-template-columns: 1fr; gap: 3rem; }
     .sarah-image { max-width: 420px; margin: 0 auto; }
     .services-grid { grid-template-columns: 1fr; }
-    .service-card.featured { grid-column: span 1; grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Stacked cards are taller and narrower, so the front's top/bottom
+       split opens a dead gap. Gather the numeral and title into one
+       centred block instead. */
+    .service-front {
+      justify-content: center;
+      gap: 1.75rem;
+      min-height: 0;
+    }
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
   }
 
@@ -1131,6 +1303,8 @@
     .hero, .zee-hero {
       padding: 8rem 1.75rem 4rem;
     }
+
+    .service-face { padding: 2rem; }
     .hero-inner, .zee-hero-inner {
       gap: 3rem;
     }
@@ -1178,12 +1352,6 @@
       gap: 1.5rem;
     }
     .form-inner { gap: 3rem; }
-
-    .service-card.featured {
-      grid-column: span 1;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
 
     .settings-grid { grid-template-columns: repeat(2, 1fr); }
     .cred-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1347,13 +1515,11 @@
     .footer { padding: 3.5rem 1rem 1.5rem; }
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 
-    .service-card, .service-item, .specialty-card, .contact-card,
+    .service-face, .service-item, .specialty-card, .contact-card,
     .location-card, .mission-card, .zee-why-card, .step,
     .credentials .cred-item, .setting-card {
       padding: 1.75rem 1.5rem;
     }
-
-    .service-card.featured { padding: 2rem 1.5rem; }
     .contact-form { padding: 1.75rem 1.25rem; }
 
     .hero-badge {
@@ -1480,6 +1646,26 @@
     .final-cta .btn-primary::before {
       animation: none !important;
     }
+  }
+
+  /* Service cards: swap the faces instantly instead of turning them.
+     The global rule above already flattens the transition duration, so
+     all that is left is to cancel the rotation itself and cross-fade. */
+  @media (prefers-reduced-motion: reduce) {
+    .service-card-inner,
+    .service-card:hover .service-card-inner,
+    .service-card.is-flipped .service-card-inner {
+      transform: none !important;
+      transform-style: flat;
+    }
+    .service-face {
+      backface-visibility: visible;
+      -webkit-backface-visibility: visible;
+    }
+    .service-back { transform: none !important; }
+    .service-cue svg,
+    .service-card:hover .service-cue svg,
+    .service-card.is-flipped .service-cue svg { transform: none !important; }
   }
 
 
@@ -1895,52 +2081,147 @@
     </div>
 
     <div class="services-grid">
-      <div class="service-card featured">
-        <div class="service-number" aria-hidden="true">01</div>
-        <div>
-          <h3>Pediatric Services</h3>
-          <p>Help your child build the communication skills they need to thrive — at home, in school, and with friends. We treat language delays, articulation, social communication, and more.</p>
+
+      <article class="service-card">
+        <div class="service-card-inner">
+
+          <div class="service-face service-front" data-number="01">
+            <span class="service-number" aria-hidden="true">01</span>
+            <div class="service-front-foot">
+              <h3 id="svc1-title">Pediatric Services</h3>
+              <button type="button" class="service-flip" aria-expanded="false" aria-controls="svc1-back">
+                <span class="service-cue" aria-hidden="true">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3v5h-5"/></svg></span>
+                <span class="sr-only">See details for Pediatric Services</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-face service-back" id="svc1-back" role="group" aria-labelledby="svc1-title">
+            <button type="button" class="service-unflip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66"/><path d="M4 3v5h5"/></svg><span class="sr-only">Back to Pediatric Services</span>
+            </button>
+            <div class="service-back-title" aria-hidden="true">Pediatric Services</div>
+            <p>Help your child build the communication skills they need to thrive — at home, in school, and with friends. We treat language delays, articulation, social communication, and more.</p>
           <ul class="service-list">
             <li>Language Delays (Late Language Emergence)</li>
-            <li>Speech Sound Disorders (Articulation & Phonology)</li>
+            <li>Speech Sound Disorders (Articulation &amp; Phonology)</li>
             <li>Social Communication Skills</li>
           </ul>
-          <a href="services.html#pediatric" class="service-link">See Pediatric Services →</a>
+            <a href="services.html#pediatric" class="service-link">See Pediatric Services →</a>
+          </div>
+
         </div>
-      </div>
+      </article>
 
-      <div class="service-card">
-        <div class="service-number" aria-hidden="true">02</div>
-        <h3>Adult Services</h3>
-        <p>Whether you're recovering from a stroke, working on accent reduction, or managing a voice disorder, we'll meet you where you are.</p>
-        <ul class="service-list">
-          <li>Cognitive Communication Disorders</li>
-          <li>Voice Disorders</li>
-          <li>Accent Reduction</li>
-        </ul>
-        <a href="services.html#adult" class="service-link">See Adult Services →</a>
-      </div>
+      <article class="service-card">
+        <div class="service-card-inner">
 
-      <div class="service-card">
-        <div class="service-number" aria-hidden="true">03</div>
-        <h3>Orofacial Myofunctional Therapy</h3>
-        <p>Address the root causes of persistent speech, feeding, and breathing challenges through targeted exercises and behavioral support.</p>
-        <a href="services.html#omt" class="service-link" aria-label="Learn more about Orofacial Myofunctional Therapy">Learn More →</a>
-      </div>
+          <div class="service-face service-front" data-number="02">
+            <span class="service-number" aria-hidden="true">02</span>
+            <div class="service-front-foot">
+              <h3 id="svc2-title">Adult Services</h3>
+              <button type="button" class="service-flip" aria-expanded="false" aria-controls="svc2-back">
+                <span class="service-cue" aria-hidden="true">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3v5h-5"/></svg></span>
+                <span class="sr-only">See details for Adult Services</span>
+              </button>
+            </div>
+          </div>
 
-      <div class="service-card">
-        <div class="service-number" aria-hidden="true">04</div>
-        <h3>Craniosacral Fascial Therapy</h3>
-        <p>The Gillespie Approach gently unwinds accumulated fascial strain, allowing optimal mobility and improved nervous system regulation.</p>
-        <a href="services.html#cft" class="service-link" aria-label="Learn more about Craniosacral Fascial Therapy">Learn More →</a>
-      </div>
+          <div class="service-face service-back" id="svc2-back" role="group" aria-labelledby="svc2-title">
+            <button type="button" class="service-unflip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66"/><path d="M4 3v5h5"/></svg><span class="sr-only">Back to Adult Services</span>
+            </button>
+            <div class="service-back-title" aria-hidden="true">Adult Services</div>
+            <p>Whether you're recovering from a stroke, working on accent reduction, or managing a voice disorder, we'll meet you where you are.</p>
+          <ul class="service-list">
+            <li>Cognitive Communication Disorders</li>
+            <li>Voice Disorders</li>
+            <li>Accent Reduction</li>
+          </ul>
+            <a href="services.html#adult" class="service-link">See Adult Services →</a>
+          </div>
 
-      <div class="service-card">
-        <div class="service-number" aria-hidden="true">05</div>
-        <h3>Lactation Services</h3>
-        <p>Achieve breastfeeding goals throughout your lactation journey with expert support on positioning, milk expression, and feeding duration.</p>
-        <a href="services.html#lactation" class="service-link" aria-label="Learn more about Lactation Services">Learn More →</a>
-      </div>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-inner">
+
+          <div class="service-face service-front" data-number="03">
+            <span class="service-number" aria-hidden="true">03</span>
+            <div class="service-front-foot">
+              <h3 id="svc3-title">Orofacial Myofunctional Therapy</h3>
+              <button type="button" class="service-flip" aria-expanded="false" aria-controls="svc3-back">
+                <span class="service-cue" aria-hidden="true">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3v5h-5"/></svg></span>
+                <span class="sr-only">See details for Orofacial Myofunctional Therapy</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-face service-back" id="svc3-back" role="group" aria-labelledby="svc3-title">
+            <button type="button" class="service-unflip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66"/><path d="M4 3v5h5"/></svg><span class="sr-only">Back to Orofacial Myofunctional Therapy</span>
+            </button>
+            <div class="service-back-title" aria-hidden="true">Orofacial Myofunctional Therapy</div>
+            <p>Address the root causes of persistent speech, feeding, and breathing challenges through targeted exercises and behavioral support.</p>
+            <a href="services.html#omt" aria-label="Learn more about Orofacial Myofunctional Therapy" class="service-link">Learn More →</a>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-inner">
+
+          <div class="service-face service-front" data-number="04">
+            <span class="service-number" aria-hidden="true">04</span>
+            <div class="service-front-foot">
+              <h3 id="svc4-title">Craniosacral Fascial Therapy</h3>
+              <button type="button" class="service-flip" aria-expanded="false" aria-controls="svc4-back">
+                <span class="service-cue" aria-hidden="true">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3v5h-5"/></svg></span>
+                <span class="sr-only">See details for Craniosacral Fascial Therapy</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-face service-back" id="svc4-back" role="group" aria-labelledby="svc4-title">
+            <button type="button" class="service-unflip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66"/><path d="M4 3v5h5"/></svg><span class="sr-only">Back to Craniosacral Fascial Therapy</span>
+            </button>
+            <div class="service-back-title" aria-hidden="true">Craniosacral Fascial Therapy</div>
+            <p>The Gillespie Approach gently unwinds accumulated fascial strain, allowing optimal mobility and improved nervous system regulation.</p>
+            <a href="services.html#cft" aria-label="Learn more about Craniosacral Fascial Therapy" class="service-link">Learn More →</a>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-inner">
+
+          <div class="service-face service-front" data-number="05">
+            <span class="service-number" aria-hidden="true">05</span>
+            <div class="service-front-foot">
+              <h3 id="svc5-title">Lactation Services</h3>
+              <button type="button" class="service-flip" aria-expanded="false" aria-controls="svc5-back">
+                <span class="service-cue" aria-hidden="true">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3v5h-5"/></svg></span>
+                <span class="sr-only">See details for Lactation Services</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-face service-back" id="svc5-back" role="group" aria-labelledby="svc5-title">
+            <button type="button" class="service-unflip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66"/><path d="M4 3v5h5"/></svg><span class="sr-only">Back to Lactation Services</span>
+            </button>
+            <div class="service-back-title" aria-hidden="true">Lactation Services</div>
+            <p>Achieve breastfeeding goals throughout your lactation journey with expert support on positioning, milk expression, and feeding duration.</p>
+            <a href="services.html#lactation" aria-label="Learn more about Lactation Services" class="service-link">Learn More →</a>
+          </div>
+
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -2109,6 +2390,47 @@
         item.classList.add('open');
         button.setAttribute('aria-expanded', 'true');
       }
+    });
+  });
+
+  // Service flip cards
+  // Hover is handled entirely in CSS on fine pointers. This covers the
+  // paths hover cannot: touch, and keyboard. Focus is moved across with
+  // the turn so a keyboard user is never left on a hidden face.
+  document.querySelectorAll('.service-card').forEach(card => {
+    const openBtn  = card.querySelector('.service-flip');
+    const closeBtn = card.querySelector('.service-unflip');
+    if (!openBtn || !closeBtn) return;
+
+    // The incoming face is still visibility:hidden at this point — the
+    // swap is deliberately delayed to the midpoint of the turn — and a
+    // hidden element cannot take focus. Try now (covers reduced motion,
+    // where there is no delay) and retry once it has come round.
+    const moveFocusTo = el => {
+      el.focus();
+      if (document.activeElement !== el) setTimeout(() => el.focus(), 420);
+    };
+
+    const setFlipped = (flipped, moveFocus) => {
+      card.classList.toggle('is-flipped', flipped);
+      openBtn.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+      if (moveFocus) moveFocusTo(flipped ? closeBtn : openBtn);
+    };
+
+    openBtn.addEventListener('click', () => setFlipped(true, true));
+    closeBtn.addEventListener('click', () => setFlipped(false, true));
+
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && card.classList.contains('is-flipped')) {
+        e.stopPropagation();
+        setFlipped(false, true);
+      }
+    });
+
+    // A card pinned open by click should release when the pointer leaves,
+    // so it does not disagree with the hover state on the way back in.
+    card.addEventListener('mouseleave', () => {
+      if (card.classList.contains('is-flipped')) setFlipped(false, false);
     });
   });
 
