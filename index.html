@@ -748,6 +748,23 @@
   .service-card.is-flipped .service-back { visibility: visible; }
   .service-card.is-flipped .service-front { visibility: hidden; }
 
+  @media (min-width: 969px) {
+    /* Every row takes the height of the tallest card so all five match.
+       Levelled up, not down: cards 01 and 02 carry bullet lists on the
+       back and cannot fit the shorter cards' height. Two columns only —
+       once stacked, matching heights buys nothing (no two cards are ever
+       side by side) and just adds dead space and scrolling. */
+    .services-grid { grid-auto-rows: 1fr; }
+
+    /* Card 05 sits alone on the last row: span the full width and centre
+       it at exactly one column's width. */
+    .services-grid > .service-card:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: calc(50% - 0.875rem);
+    }
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .service-card:hover .service-card-inner {
       transform: translateY(-4px) rotateY(180deg);
