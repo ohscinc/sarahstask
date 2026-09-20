@@ -1162,6 +1162,77 @@
     border: 0;
   }
 
+
+  /* ============================================
+     Atelier Helix — designer credit (footer)
+     Declares no colour, font or size: everything is inherited from
+     .footer-bottom, so it matches the host footer exactly. The kit's
+     <style> lives here rather than inline because the rules are needed
+     once per page, not once per instance.
+     ============================================ */
+  /* The class is doubled so these rules outrank the host's own `footer a { ... }`
+     declarations without resorting to !important. */
+  .ah-credit.ah-credit {
+    /* Rest opacity of the monogram only. The text is never dimmed — see README. */
+    --ah-credit-mark-rest: .62;
+    --ah-credit-ease: cubic-bezier(.2, .8, .2, 1);
+
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+
+    /* Everything visual comes from the host. No colour is declared anywhere,
+       so the credit is monochrome by construction and cannot clash. */
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  /* currentColor means the focus ring contrasts on a light or a dark footer,
+     without either party knowing in advance which it is. */
+  .ah-credit.ah-credit:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .ah-credit .ah-credit__mark {
+    /* Tracks the host's footer text size, but never leaves the 14–18px band. */
+    height: clamp(14px, 1.15em, 18px);
+    width: auto;
+    flex: none;
+    display: block;
+    fill: currentColor;
+    /* Optical nudge: sits the mark on the text's cap-height, not its line box. */
+    transform: translateY(-.04em);
+    opacity: var(--ah-credit-mark-rest);
+    transition: opacity .3s var(--ah-credit-ease);
+  }
+
+  .ah-credit.ah-credit:hover  .ah-credit__mark,
+  .ah-credit.ah-credit:focus-visible .ah-credit__mark { opacity: 1; }
+
+  /* The hover affordance for the text is an underline rather than a colour
+     change, so it works on any host palette and never lowers contrast. */
+  .ah-credit .ah-credit__text {
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: from-font;
+    text-underline-offset: .22em;
+    transition: text-decoration-color .3s var(--ah-credit-ease);
+  }
+
+  .ah-credit.ah-credit:hover  .ah-credit__text,
+  .ah-credit.ah-credit:focus-visible .ah-credit__text { text-decoration-color: currentColor; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ah-credit .ah-credit__mark,
+    .ah-credit .ah-credit__text { transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -1354,6 +1425,17 @@
   <div class="footer-bottom">
     <div>© 2026 Sarah's T.A.S.K. All rights reserved.</div>
     <div>Compassion in our hearts, you in our minds.</div>
+    <a class="ah-credit"
+       href="https://atelierhelix.io/?utm_source=sarahs-task&amp;utm_medium=footer-credit&amp;utm_campaign=client-sites"
+       target="_blank" rel="noopener noreferrer">
+      <svg class="ah-credit__mark" viewBox="0 0 330 225" aria-hidden="true" focusable="false">
+        <polygon points="0,225 80,225 180,0 130,0"/>
+        <polygon points="130,0 180,0 220,225 160,225"/>
+        <polygon points="142,118 268,80 268,124 124,162"/>
+        <rect x="268" y="0" width="62" height="225"/>
+      </svg>
+      <span class="ah-credit__text">Website by Atelier&nbsp;Helix</span>
+    </a>
   </div>
 </footer>
 
