@@ -1235,6 +1235,23 @@
   }
 
   /* ============================================
+     NARROW-SCREEN DECOR OVERHANG
+     .zee-story-image::before and .zee-author-photo::before are offset
+     colour layers that hang 1.5rem (24px) past their container. The
+     section padding is only 1rem (16px) below 480px, so 8px escaped;
+     .zee-story is overflow:visible, so that reached the document and
+     scrolled the page sideways. (.zee-hero and .zee-why already clip
+     their own.) Tuck the overhang inside the padding — the offset
+     effect is kept, just shallower.
+     ============================================ */
+  @media (max-width: 480px) {
+    .zee-author-photo::before,
+    .zee-story-image::before {
+      inset: 1rem -0.5rem -0.5rem 1rem;
+    }
+  }
+
+  /* ============================================
      MOBILE FOOTER — centred
      Stacked into one or two narrow columns, the left-aligned copy left
      a ragged gutter down the right. Centring it reads as intentional at
@@ -1246,6 +1263,12 @@
     .footer-col { text-align: center; }
 
     .footer-brand .logo { display: inline-block; }
+
+    /* .footer-brand p is capped at max-width:320px. text-align:center
+       only centres the text inside that box — the box itself still sat
+       hard left, which is why the paragraph looked off-axis against the
+       centred headings. Auto margins centre the box. */
+    .footer-brand p { margin-left: auto; margin-right: auto; }
 
     /* The footer lists have no bullets, so centring them is safe. */
     .footer-col ul { padding-left: 0; }
