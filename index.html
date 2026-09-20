@@ -553,8 +553,9 @@
     margin-bottom: 1rem;
   }
 
+  /* The number sits in its own grid row/column on the featured card,
+     so the 1rem grid gap supplies the spacing instead of a margin. */
   .service-card.featured .service-number {
-    font-size: 4rem;
     margin-bottom: 0;
   }
 
@@ -563,9 +564,19 @@
     margin-bottom: 1rem;
   }
 
-  .service-card.featured h3 {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
+  /* The featured card's larger type scale belongs to the wide
+     two-column treatment only. At <=900px it stacks and renders
+     identically to the other cards, so card 01 must drop back to the
+     shared scale — otherwise it reads as oversized next to 02. */
+  @media (min-width: 901px) {
+    .service-card.featured .service-number {
+      font-size: 4rem;
+    }
+
+    .service-card.featured h3 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   .service-card p {
