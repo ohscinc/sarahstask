@@ -552,33 +552,17 @@
   /* ---- Front ---- */
   .service-front {
     justify-content: center;
-    gap: 1.75rem;
+    align-items: center;
+    text-align: center;
+    gap: 1.6rem;
     min-height: 16.5rem;
     background:
-      linear-gradient(152deg, var(--cream) 0%, var(--cream-soft) 58%, var(--warm-white) 100%);
-  }
-
-  /* Oversized ghost numeral bleeding off the corner — the editorial
-     anchor that keeps the sparse front face from reading as empty. */
-  .service-front::before {
-    content: attr(data-number);
-    position: absolute;
-    right: -0.5rem;
-    bottom: -2.25rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 9rem;
-    line-height: 1;
-    color: var(--sage);
-    opacity: 0.08;
-    pointer-events: none;
-    user-select: none;
+      linear-gradient(160deg, var(--cream) 0%, var(--cream-soft) 70%);
   }
 
   .service-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 3.25rem;
     color: var(--sage-dark);
     font-style: italic;
     line-height: 1;
@@ -589,9 +573,10 @@
   .service-number::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: -0.85rem;
-    width: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.8rem;
+    width: 2.25rem;
     height: 1px;
     background: var(--sage);
     transition: width 0.6s cubic-bezier(0.2, 0.7, 0.25, 1);
@@ -601,13 +586,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
-    align-items: flex-start;
+    gap: 1.25rem;
+    align-items: center;
   }
 
   .service-card h3 {
-    font-size: 1.6rem;
-    line-height: 1.25;
+    font-size: 1.95rem;
+    line-height: 1.22;
     margin-bottom: 0;
   }
 
@@ -620,7 +605,7 @@
     border: 0;
     padding: 0;
     cursor: pointer;
-    text-align: left;
+    text-align: center;
   }
 
   .service-flip::after {
@@ -643,7 +628,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -652,8 +637,8 @@
   }
 
   .service-cue svg {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.25, 1);
   }
 
@@ -1538,9 +1523,10 @@
 
     .category-marker { font-size: 3.5rem; }
 
-    .service-card h3, .service-item h3, .specialty-card h3 {
+    .service-item h3, .specialty-card h3 {
       font-size: 1.3rem;
     }
+    .service-card h3 { font-size: 1.55rem; }
   }
 
   /* ============================================
@@ -2075,7 +2061,7 @@
       <article class="service-card">
         <div class="service-card-inner">
 
-          <div class="service-face service-front" data-number="01">
+          <div class="service-face service-front">
             <span class="service-number" aria-hidden="true">01</span>
             <div class="service-front-foot">
               <h3 id="svc1-title">Pediatric Services</h3>
@@ -2106,7 +2092,7 @@
       <article class="service-card">
         <div class="service-card-inner">
 
-          <div class="service-face service-front" data-number="02">
+          <div class="service-face service-front">
             <span class="service-number" aria-hidden="true">02</span>
             <div class="service-front-foot">
               <h3 id="svc2-title">Adult Services</h3>
@@ -2137,7 +2123,7 @@
       <article class="service-card">
         <div class="service-card-inner">
 
-          <div class="service-face service-front" data-number="03">
+          <div class="service-face service-front">
             <span class="service-number" aria-hidden="true">03</span>
             <div class="service-front-foot">
               <h3 id="svc3-title">Orofacial Myofunctional Therapy</h3>
@@ -2163,7 +2149,7 @@
       <article class="service-card">
         <div class="service-card-inner">
 
-          <div class="service-face service-front" data-number="04">
+          <div class="service-face service-front">
             <span class="service-number" aria-hidden="true">04</span>
             <div class="service-front-foot">
               <h3 id="svc4-title">Craniosacral Fascial Therapy</h3>
@@ -2189,7 +2175,7 @@
       <article class="service-card">
         <div class="service-card-inner">
 
-          <div class="service-face service-front" data-number="05">
+          <div class="service-face service-front">
             <span class="service-number" aria-hidden="true">05</span>
             <div class="service-front-foot">
               <h3 id="svc5-title">Lactation Services</h3>
